@@ -16,13 +16,13 @@ markdown: kramdown
 safe: false
 theme: minima
 gems:
-  - jekyll-assets
+#  - jekyll-assets
   - jekyll-feed
-assets:
-  prefix: "/assets"
-  sources:
-    - _assets
-    - semantic/dist
+#assets:
+#  prefix: "/assets"
+#  sources:
+#    - _assets
+#    - semantic/dist
 exclude:
   - Gemfile
   - Gemfile.lock
