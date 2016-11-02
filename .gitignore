@@ -3,3 +3,4 @@ semantic
 _site
 *-cache
 .jekyll-metadata
+Gemfile.lock
