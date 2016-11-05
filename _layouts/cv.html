@@ -19,126 +19,99 @@
       </div>
       <div class="ui tertiary bottom attached active tab segment" data-tab="cards">
         <div class="ui stackable cards">
+          {% if site.data.cv.contact.size > 0 %}
           <div class="card">
             <div class="content">
               <div class="header">Contact</div>
               <div class="description">
-                <p><strong>Phone</strong>: +44 7527 337790</p>
-                <p><strong>Email</strong>: donatasmart@gmail.com</p>
+                {% for contact in site.data.cv.contact %}
+                <p><strong>{{ contact.type }}</strong>: {{ contact.value }}</p>
+                {% endfor %}
               </div>
             </div>
           </div>
+          {% endif %}
+          {% if site.data.cv.about.size > 0 %}
           <div class="card">
             <div class="content">
               <div class="header">About</div>
               <div class="description">
-                <p>I am a software engineer with over 5 years of experience in PHP and MySQL. And 2 years of intense Scala learning curve, applied in building multi micro-service API platform. My personal experiments are mostly developed with latest libs cloned from Git repositories.</p>
-                <p>I consider myself an efficient worker who always tries to make use of best practices and I like to keep up-to-date with programming theory.</p>
+                {{ site.data.cv.about | markdownify }}
               </div>
             </div>
           </div>
+          {% endif %}
+          {% for work in site.data.cv.work %}
           <div class="card">
             <div class="content">
-              <div class="header">Work - OnTrackRetail ltd.</div>
+              <div class="header">Work - {{ work.place }}</div>
               <div class="meta">
-                <span>Software developer</span>
-                <span>11-2014 - now</span>
+                <span>{{ work.position }}</span>
+                <span>{{ work.start }} - {{ work.end }}</span>
               </div>
               <div class="description">
-                <p>Scala, Git. Developing multi micro-service based API for various rail companies to unify the unthinkable differences within rail industry.</p>
+                <p>{{ work.description }}</p>
               </div>
             </div>
           </div>
+          {% endfor %}
+          {% for education in site.data.cv.education %}
           <div class="card">
             <div class="content">
-              <div class="header">Work - Quidco</div>
+              <div class="header">Education - {{ education.name }}</div>
               <div class="meta">
-                <span>Software developer</span>
-                <span>02-2012 - 10-2014</span>
+                <span>{{ education.school }}</span>
+                <span>{{ education.degree }}</span>
+                <span>{{ education.start }} - {{ education.end }}</span>
               </div>
               <div class="description">
-                <p>OOP (PHP), ZF1, Twig, LESS, Twitter Bootstrap, Smarty, jQuery, Git, SVN. Developing vast variety of projects (one project includes icCube third party implementation) to upgrade and support Quidco system.</p>
+                {% if education.notes.size > 0 %}
+                <p><strong>Additional notes</strong>: {{ education.notes }}</p>
+                {% endif %}
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="content">
-              <div class="header">Work - Assertis ltd.</div>
-              <div class="meta">
-                <span>Web developer</span>
-                <span>03-2011 - 02-2012</span>
-              </div>
-              <div class="description">
-                <p>OOP (PHP), XSLT, JavaScript, SVN. Working with the xFrame MVC framework, writing unit tests, jQuery and SASS. Applying white labeling to multiple web sites under the same web application.</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="content">
-              <div class="header">Work - Group of real estate and development</div>
-              <div class="meta">
-                <span>Web developer</span>
-                <span>03-2010 - 02-2011</span>
-              </div>
-              <div class="description">
-                <p>At ReBank I began my knowledge of SVN and Zend Framework. After few months we began to re-develop ReBank system to use Zend Framework and on same side we upgraded DB (it was very unclear and inefficient).</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="content">
-              <div class="header">Work - National centre of examination</div>
-              <div class="meta">
-                <span>IT specialist</span>
-                <span>11-2006 - 10-2008</span>
-              </div>
-              <div class="description">
-                <p>Lot's of work with databases (mainly Oracle, a little MySQL). Writing various auto-reports for different exams, also running and configuring other automatic processes.</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="content">
-              <div class="header">Education - Applied mathematics</div>
-              <div class="meta">
-                <span>University of Vilnius</span>
-                <span>Bachelor</span>
-                <span>09-2003 - 06-2007</span>
-              </div>
-              <div class="description">
-                <p><strong>Additional notes</strong>: I chose stochastic profile in the third term</p>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
           <div class="card">
             <div class="content">
               <div class="header">Technical skills</div>
               <div class="description">
-                <p><strong>Languages</strong>: Scala, PHP, MySQL, XSLT, JavaScript, CSS, Python (newbie)</p>
-                <p><strong>Libraries</strong>: xFrame, ZF1, jQuery, flot, Twig, Doctrine, Smarty, Twitter Bootstrap, Backbone</p>
-                <p><strong>Tools/Utils</strong>: Phing, SASS/LESS, CasperJS, PHPUnit, DBUnit, Selenium, Memcache(d), Gearman</p>
-                <p><strong>VCS</strong>: Git, SVN</p>
+                {% if site.data.cv.skills.languages.size > 0 %}
+                <p><strong>Languages</strong>: {{ site.data.cv.skills.languages | array_to_sentence_string }}</p>
+                {% endif %}
+                {% if site.data.cv.skills.libraries.size > 0 %}
+                <p><strong>Libraries</strong>: {{ site.data.cv.skills.libraries | array_to_sentence_string }}</p>
+                {% endif %}
+                {% if site.data.cv.skills.tools.size > 0 %}
+                <p><strong>Tools/Utils</strong>: {{ site.data.cv.skills.tools | array_to_sentence_string }}</p>
+                {% endif %}
+                {% if site.data.cv.skills.vcs.size > 0 %}
+                <p><strong>VCS</strong>: {{ site.data.cv.skills.vcs | array_to_sentence_string }}</p>
+                {% endif %}
               </div>
             </div>
           </div>
+          {% for cc in site.data.cv.classes %}
           <div class="card">
             <div class="content">
-              <div class="header">Classes and certificates</div>
+              <div class="header">Classes and certificates - {{ cc.title }}</div>
               <div class="meta">
-                <span>28-01-2008 - 31-01-2008</span>
+                <span>{{ cc.start }} - {{ cc.end }}</span>
               </div>
               <div class="description">
-                <p><strong>Organiser</strong>: National centre of examination</p>
-                <p><strong>Title</strong>: Scientific results of statistical methods, statistics with SPSS</p>
-                <p><strong>Additional notes</strong>: The seminar topics included: the main statistical problem, the statistical findings of one sample / two samples, the table frequencies, the hypothesis of correlation coefficient equality to zero; non-parametrical criteria; mono-factor, bi-factor and blocked data analysis of variance, cluster analysis, linear, multiple and logistic regression</p>
+                <p><strong>Organiser</strong>: {{ cc.organiser }}</p>
+                {% if cc.notes.size > 0 %}
+                  <p><strong>Additional notes</strong>: {{ cc.notes }}</p>
+                {% endif %}
               </div>
             </div>
           </div>
+          {% endfor %}
           <div class="card">
             <div class="content">
               <div class="header">Hobbies</div>
               <div class="description">
-                <p>Judging new / old films, reading science fiction, developing something “awesome”, visiting museums, traveling and discovering new lands, collecting heavy music records</p>
+                {{ site.data.cv.hobbies | markdownify }}
               </div>
             </div>
           </div>

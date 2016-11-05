@@ -1,0 +1,92 @@
+contact:
+  - type: Phone
+    value: +44 7527 337790
+  - type: Email
+    value: donatasmart@gmail.com
+about: |
+  I am a software engineer with over 5 years of experience in PHP and MySQL.
+  And 2 years of intense Scala learning curve, applied in building multi micro-service API platform.
+  My personal experiments are mostly developed with latest libs cloned from Git repositories.
+
+  I consider myself an efficient worker who always tries to make use of best practices and I like to keep up-to-date with programming theory.
+work:
+  - place: OnTrackRetail ltd.
+    position: Senior Software developer
+    start: 11-2014
+    end: now
+    description: Scala, Git. Developing multi micro-service based API for various rail companies to unify the unthinkable differences within rail industry.
+  - place: Quidco
+    position: Software developer
+    start: 02-2012
+    end: 10-2014
+    description: OOP (PHP), ZF1, Twig, LESS, Twitter Bootstrap, Smarty, jQuery, Git, SVN. Developing vast variety of projects (one project includes icCube third party implementation) to upgrade and support Quidco system.
+  - place: Assertis ltd.
+    position: Web developer
+    start: 03-2011
+    end: 02-2012
+    description: OOP (PHP), XSLT, JavaScript, SVN. Working with the xFrame MVC framework, writing unit tests, jQuery and SASS. Applying white labeling to multiple web sites under the same web application.
+  - place: Group of real estate and development
+    position: Web developer
+    start: 03-2010
+    end: 02-2011
+    description: At ReBank I began my knowledge of SVN and Zend Framework. After few months we began to re-develop ReBank system to use Zend Framework and on same side we upgraded DB (it was very unclear and inefficient).
+  - place: National centre of examination
+    position: IT specialist
+    start: 11-2006
+    end: 10-2008
+    description: Lot's of work with databases (mainly Oracle, a little MySQL). Writing various auto-reports for different exams, also running and configuring other automatic processes.
+education:
+  - name: Applied mathematics
+    school: University of Vilnius
+    degree: Bachelor
+    start: 09-2003
+    end: 06-2007
+    notes: I chose stochastic profile in the third term
+skills:
+  languages:
+    - Scala
+    - PHP
+    - SQL
+    - XSLT
+    - JavaScript
+    - CSS
+    - Python
+  libraries:
+    - xFrame
+    - ZF1
+    - jQuery
+    - flot
+    - Twig
+    - Doctrine
+    - Smarty
+    - Twitter Bootstrap
+    - Semantic UI
+    - Backbone
+  tools:
+    - Phing
+    - SASS/LESS
+    - CasperJS
+    - PHPUnit
+    - DBUnit
+    - Selenium
+    - Memcache(d)
+    - Gearman
+  vcs:
+    - Git
+    - SVN
+classes:
+  - title: Scientific results of statistical methods, statistics with SPSS
+    start: 28-01-2006
+    end: 31-01-2006
+    organiser: National centre of examination
+    notes: >
+      The seminar topics included:
+        the main statistical problem,
+        the statistical findings of one sample / two samples,
+        the table frequencies,
+        the hypothesis of correlation coefficient equality to zero;
+        non-parametrical criteria;
+        mono-factor, bi-factor and blocked data analysis of variance,
+        cluster analysis, linear, multiple and logistic regression
+hobbies:
+  Judging new / old films, reading science fiction, developing something “awesome”, visiting museums, traveling and discovering new lands, collecting heavy music records
