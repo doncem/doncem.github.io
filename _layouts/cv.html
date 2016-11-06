@@ -4,7 +4,7 @@
 <body>
   <div class="ui inverted vertical segment">
     {% include menu.html active=page.path %}
-    <div class="ui container">
+    <div class="ui container" id="printable">
       <div class="ui one column grid">
         <div class="row">
           <div class="column">
@@ -18,7 +18,7 @@
         <a class="item" data-tab="timeline">Timeline</a>
       </div>
       <div class="ui tertiary bottom attached active tab segment" data-tab="cards">
-        <div class="ui stackable cards">
+        <div class="ui two doubling cards">
           {% if site.data.cv.contact.size > 0 %}
           <div class="card">
             <div class="content">

@@ -7,4 +7,11 @@
   <link rel="stylesheet" href="/assets/semantic.min.css" />
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="/assets/semantic.min.js"></script>
+  <style type="text/css">
+    @media print {
+      body * { visibility: hidden; }
+      #printable .active.tab, #printable .active.tab * { visibility: visible; border: none; }
+      #printable .active.tab { position: absolute; left: 0; top: 0; }
+    }
+  </style>
 </head>
