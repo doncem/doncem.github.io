@@ -14,27 +14,58 @@ work:
     position: Senior Software developer
     start: 11-2014
     end: now
-    description: Scala, Git. Developing multi micro-service based API for various rail companies to unify the unthinkable differences within rail industry.
+    description: Developing multi micro-service based API for various rail companies to unify the unthinkable differences within rail industry.
+    tags:
+      - Scala
+      - Git
+      - API
+      - micro-service
   - place: Quidco
     position: Software developer
     start: 02-2012
     end: 10-2014
-    description: OOP (PHP), ZF1, Twig, LESS, Twitter Bootstrap, Smarty, jQuery, Git, SVN. Developing vast variety of projects (one project includes icCube third party implementation) to upgrade and support Quidco system.
+    description: Developing vast variety of projects (one project includes icCube third party implementation) to upgrade and support Quidco system.
+    tags:
+      - PHP5
+      - ZF1
+      - Twig
+      - LESS
+      - Twitter Bootstrap
+      - Smarty
+      - jQuery
+      - Git
+      - SVN
   - place: Assertis ltd.
     position: Web developer
     start: 03-2011
     end: 02-2012
-    description: OOP (PHP), XSLT, JavaScript, SVN. Working with the xFrame MVC framework, writing unit tests, jQuery and SASS. Applying white labeling to multiple web sites under the same web application.
+    description: Working with the xFrame MVC framework, writing unit tests, jQuery and SASS. Applying white labeling to multiple web sites under the same web application.
+    tags:
+      - PHP5
+      - xFrame
+      - jQuery
+      - XSTL
+      - SASS
+      - BackboneJS
+      - SVN
   - place: Group of real estate and development
     position: Web developer
     start: 03-2010
     end: 02-2011
     description: At ReBank I began my knowledge of SVN and Zend Framework. After few months we began to re-develop ReBank system to use Zend Framework and on same side we upgraded DB (it was very unclear and inefficient).
+    tags:
+      - PHP5
+      - MySQL
+      - SVN
+      - ZF1
   - place: National centre of examination
     position: IT specialist
     start: 11-2006
     end: 10-2008
     description: Lot's of work with databases (mainly Oracle, a little MySQL). Writing various auto-reports for different exams, also running and configuring other automatic processes.
+    tags:
+      - SQL
+      - MS Office
 education:
   - name: Applied mathematics
     school: University of Vilnius

@@ -53,6 +53,9 @@
                 <p>{{ work.description }}</p>
               </div>
             </div>
+            <div class="extra content">
+              {{ work.tags | array_to_sentence_string }}
+            </div>
           </div>
           {% endfor %}
           {% for education in site.data.cv.education %}
