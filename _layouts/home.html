@@ -1,6 +1,18 @@
 <!doctype html>
 <html>
-{% include header.html %}
+  <head>
+    {% include header.html %}
+    {% if page.path == "cv.html" %}
+    <link rel="stylesheet" href="/assets/vertical-timeline.css" />
+    <style type="text/css">
+      @media print {
+        body * { visibility: hidden; }
+        #printable .active.tab, #printable .active.tab * { visibility: visible; border: none; }
+        #printable .active.tab { position: absolute; left: 0; top: 0; }
+      }
+    </style>
+    {% endif %}
+  </head>
 <body>
   <div class="ui inverted vertical segment">
     {% include menu.html active=page.path %}

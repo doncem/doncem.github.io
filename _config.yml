@@ -30,4 +30,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - semantic
+  - vendors

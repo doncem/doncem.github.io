@@ -120,8 +120,101 @@ title: CV
       </div>
     </div>
   </div>
-  <div class="ui bottom attached tab segment disabled" data-tab="timeline">
-    WIP
+  <div class="ui tertiary bottom attached tab segment" data-tab="timeline">
+    <section id="cd-timeline">
+      {% if site.data.cv.contact.size > 0 %}
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-picture">
+        </div>
+        <div class="cd-timeline-content">
+          <h2>Contact</h2>
+          {% for contact in site.data.cv.contact %}
+          <p><strong>{{ contact.type }}</strong>: {{ contact.value }}</p>
+          {% endfor %}
+          <span class="cd-date hidden">{{ site.time | date_to_string }}</span>
+        </div>
+      </div>
+      {% endif %}
+      {% if site.data.cv.about.size > 0 %}
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+        </div>
+        <div class="cd-timeline-content">
+          <h2>About</h2>
+          {{ site.data.cv.about | markdownify }}
+          <span class="cd-date hidden">{{ site.time | date_to_string }}</span>
+        </div>
+      </div>
+      {% endif %}
+      {% for work in site.data.cv.work %}
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location">
+        </div>
+        <div class="cd-timeline-content">
+          <h2>Work - {{ work.place }}<span>{{ work.position }}</span></h2>
+          {{ work.description | markdownify }}
+          <p><strong>Tags</strong>: {{ work.tags | array_to_sentence_string }}</p>
+          <span class="cd-date">{{ work.start }} - {{ work.end }}</span>
+        </div>
+      </div>
+      {% endfor %}
+      {% for education in site.data.cv.education %}
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location">
+        </div>
+        <div class="cd-timeline-content">
+          <h2>Education - {{ education.name }}<span>{{ education.school }} - {{ education.degree }}</span></h2>
+          {% if education.notes.size > 0 %}
+          <p><strong>Additional notes</strong>: {{ education.notes }}</p>
+          {% endif %}
+          <span class="cd-date">{{ education.start }} - {{ education.end }}</span>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+        </div>
+        <div class="cd-timeline-content">
+          <h2>Technical skills</h2>
+          {% if site.data.cv.skills.languages.size > 0 %}
+          <p><strong>Languages</strong>: {{ site.data.cv.skills.languages | array_to_sentence_string }}</p>
+          {% endif %}
+          {% if site.data.cv.skills.libraries.size > 0 %}
+          <p><strong>Libraries</strong>: {{ site.data.cv.skills.libraries | array_to_sentence_string }}</p>
+          {% endif %}
+          {% if site.data.cv.skills.tools.size > 0 %}
+          <p><strong>Tools/Utils</strong>: {{ site.data.cv.skills.tools | array_to_sentence_string }}</p>
+          {% endif %}
+          {% if site.data.cv.skills.vcs.size > 0 %}
+          <p><strong>VCS</strong>: {{ site.data.cv.skills.vcs | array_to_sentence_string }}</p>
+          {% endif %}
+          <span class="cd-date hidden">{{ site.time | date_to_string }}</span>
+        </div>
+      </div>
+      {% for cc in site.data.cv.classes %}
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-location">
+        </div>
+        <div class="cd-timeline-content">
+          <h2>Classes and certificates - {{ cc.title }}</h2>
+          <p><strong>Organiser</strong>: {{ cc.organiser }}</p>
+          {% if cc.notes.size > 0 %}
+          <p><strong>Additional notes</strong>: {{ cc.notes }}</p>
+          {% endif %}
+          <span class="cd-date">{{ cc.start }} - {{ cc.end }}</span>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie">
+        </div>
+        <div class="cd-timeline-content">
+          <h2>Hobbies</h2>
+          {{ site.data.cv.hobbies | markdownify }}
+          <span class="cd-date hidden">{{ site.time | date_to_string }}</span>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
 
