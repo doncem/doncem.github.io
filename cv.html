@@ -23,6 +23,7 @@ title: CV
   <div class="ui inverted top attached tabular menu">
     <a class="active item" data-tab="cards">Cards</a>
     <a class="item" data-tab="timeline">Timeline</a>
+    <a class="item" data-tab="tags">Tags</a>
   </div>
   <div class="ui tertiary bottom attached active tab segment" data-tab="cards">
     <div class="ui two doubling cards">
@@ -223,10 +224,63 @@ title: CV
       </div>
     </section>
   </div>
+  <div class="ui tertiary bottom attached tab segment" data-tab="tags">
+    <p>Although only few of features are mentioned throughout the work instances due to countless tools and abilities in use and, of course, repetition, it is nice to have some data to play around. Here is the tag cloud</p>
+    <p>Tag count transformation: each half year increments occurrence by 1</p>
+    <p>P.S. Bear in mind this is only from work tags. Some of technical features are applied randomly at any time as this page using jekyll, for instance</p>
+    <div id="tag-cloud" class="segment"></div>
+  </div>
 </div>
 
 <script type="text/javascript">
-  $('.menu .item')
-    .tab()
-  ;
+$(function() {
+  var tags = [
+    {% for work in site.data.cv.work %}
+      {% assign year_start = "01-" | append: work.start | date: "%Y" %}
+      {% assign month_start = "01-" | append: work.start | date: "%m" %}
+      {% if work.end == "now" %}
+        {% assign year_end = site.time | date: "%Y" %}
+        {% assign month_end = site.time | date: "%m" %}
+      {% else %}
+        {% assign year_end = "01-" | append: work.end | date: "%Y" %}
+        {% assign month_end = "01-" | append: work.end | date: "%m" %}
+      {% endif %}
+      {% assign period = year_end | minus: year_start | times: 12 | plus: month_end | minus: month_start | plus: 0.0 | divided_by: 6 | ceil %}
+      {% for tag in work.tags %}
+        {% for i in (1..period) %}
+        "{{ tag }}",
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+    ""
+  ];
+  var counted = tags.reduce(function(a, b) {
+    if (b != "") {
+      a[b] = a[b] ? a[b] + 1 : 1;
+    }
+
+    return a;
+  }, []);
+  var words = function() {
+    var w = [];
+
+    for (key in counted) {
+      if (counted.hasOwnProperty(key)) w.push({text: key, weight: counted[key]});
+    }
+
+    return w;
+  };
+
+  $('.menu .item').tab({
+    onFirstLoad: function(data) {
+      if (data == "tags") {
+        $('#tag-cloud').jQCloud(words(), {
+          height: 400,
+          autoResize: true,
+          colors: ["#FF695E","#FF851B","#FFE21F","#D9E778","#2ECC40","#6DFFFF","#54C8FF","#A291FB","#DC73FF","#FF8EDF","#D67C1C","#DCDDDE","#545454"]
+        });
+      }
+    }
+  });
+});
 </script>

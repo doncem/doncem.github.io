@@ -19,7 +19,11 @@ work:
       - Scala
       - Git
       - API
+      - BDD
+      - SQL
       - micro-service
+      - ansible
+      - Team lead
   - place: Quidco
     position: Software developer
     start: 02-2012
@@ -29,6 +33,7 @@ work:
       - PHP5
       - ZF1
       - Twig
+      - MySQL
       - LESS
       - Twitter Bootstrap
       - Smarty
@@ -43,6 +48,8 @@ work:
     tags:
       - PHP5
       - xFrame
+      - Phing
+      - MySQL
       - jQuery
       - XSTL
       - SASS
@@ -56,6 +63,8 @@ work:
     tags:
       - PHP5
       - MySQL
+      - CSS
+      - JavaScript
       - SVN
       - ZF1
   - place: National centre of examination
@@ -86,7 +95,6 @@ skills:
     - xFrame
     - ZF1
     - jQuery
-    - flot
     - Twig
     - Doctrine
     - Smarty
