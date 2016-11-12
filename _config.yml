@@ -21,6 +21,8 @@ theme: minima
 gems:
 #  - jekyll-assets
   - jekyll-feed
+collections:
+  projects:
 #assets:
 #  prefix: "/assets"
 #  sources:
