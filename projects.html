@@ -29,7 +29,7 @@ title: Projects
             <a class="ui primary button" href="{{ project.link }}" target="_blank">Link</a>
             {% endif %}
             {% if project.zip.size > 0 %}
-            <a class="ui primary button" href="/assets/projects/{{ project.zip }}">Download .zip</a>
+            <a class="ui primary button" href="{{ project.zip }}" target="_blank">Link to .zip</a>
             {% endif %}
           </div>
         </div>

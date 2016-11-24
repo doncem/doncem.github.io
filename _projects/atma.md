@@ -3,7 +3,7 @@ order: 4
 title: Atma
 tags:
   - wordpress
-zip: atma.zip
+zip: https://github.com/doncem/doncem.github.io/blob/project/assets/assets/projects/atma.zip
 ---
 
 Refurbished web for Atma with latest technology using wordpress continuous integration.

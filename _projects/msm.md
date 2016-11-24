@@ -4,7 +4,7 @@ title: MSM Consultancy
 tags:
   - wordpress
 published: 08-2014
-zip: msm.zip
+zip: https://github.com/doncem/doncem.github.io/blob/project/assets/assets/projects/msm.zip
 ---
 
 Personal page for real estate agent
