@@ -25,7 +25,12 @@ title: Projects
           <p class="ui left floated"><strong>Worked on</strong>: {{ project.worked }}</p>
           {% endif %}
           <div class="ui right floated">
+            {% if project.link.size > 0 %}
+            <a class="ui primary button" href="{{ project.link }}" target="_blank">Link</a>
+            {% endif %}
+            {% if project.zip.size > 0 %}
             <a class="ui primary button" href="/assets/projects/{{ project.zip }}">Download .zip</a>
+            {% endif %}
           </div>
         </div>
       </div>
