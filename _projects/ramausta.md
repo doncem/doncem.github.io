@@ -8,7 +8,7 @@ tags:
   - jQuery
   - SASS
 published: 11-2013
-zip: ramausta.zip
+zip: https://github.com/doncem/doncem.github.io/blob/project/assets/assets/projects/ramausta.zip
 ---
 
 A quick mock-up for private company "Ramausta" situated in Vilnius, Lithuania.
