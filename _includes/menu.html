@@ -2,6 +2,7 @@
   <a class="{% if include.active == "index.html" %}active {% endif %}item" href="{% link index.html %}">Home</a>
   <a class="{% if include.active == "cv.html" %}active {% endif %}item" href="{% link cv.html %}">CV</a>
   <a class="{% if include.active == "projects.html" %}active {% endif %}item" href="{% link projects.html %}">Projects</a>
+  <a class="{% if include.active == "posts.html" or include.activeExtra == "_post" %}active {% endif %}item" href="{% link posts.html %}">Posts</a>
   <div class="right menu">
     <div class="item">
       <a class="ui primary button" href="//github.com/doncem" target="_blank">GitHub</a>

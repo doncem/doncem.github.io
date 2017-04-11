@@ -13,10 +13,8 @@ title: Projects
     <div class="item">
       <div class="middle aligned content">
         <div class="header">{{ project.title }}</div>
-          <div class="meta">{{ project.tags | array_to_sentence_string }}</div>
-        <div class="description">
-          {{ project.content }}
-        </div>
+        <div class="meta">{{ project.tags | array_to_sentence_string }}</div>
+        <div class="description">{{ project.content }}</div>
         <div class="extra">
           {% if project.published.size > 0 %}
           <p class="ui left floated"><strong>Published</strong>: {{ project.published }}</p>

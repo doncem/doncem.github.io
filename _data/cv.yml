@@ -38,6 +38,8 @@ work:
       - Twitter Bootstrap
       - Smarty
       - jQuery
+      - composer
+      - Phing
       - Git
       - SVN
   - place: Assertis ltd.

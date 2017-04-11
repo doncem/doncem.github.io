@@ -231,6 +231,8 @@ title: CV
     <div id="tag-cloud-work" class="segment"></div>
     <p>Work + projects:</p>
     <div id="tag-cloud-work-projects" class="segment"></div>
+    <p>Work + projects + posts:</p>
+    <div id="tag-cloud-work-projects-posts" class="segment"></div>
   </div>
 </div>
 
@@ -259,6 +261,14 @@ $(function() {
   var projectTags = [
     {% for project in site.projects %}
       {% for tag in project.tags %}
+        "{{ tag }}",
+      {% endfor %}
+    {% endfor %}
+    ""
+  ];
+  var postsTags = [
+    {% for post in site.posts %}
+      {% for tag in post.tags %}
         "{{ tag }}",
       {% endfor %}
     {% endfor %}
@@ -309,6 +319,11 @@ $(function() {
           colors: colours
         });
         $('#tag-cloud-work-projects').jQCloud(words(workTags.concat(projectTags)), {
+          height: 400,
+          autoResize: true,
+          colors: colours
+        });
+        $('#tag-cloud-work-projects-posts').jQCloud(words(workTags.concat(projectTags).concat(postsTags)), {
           height: 400,
           autoResize: true,
           colors: colours

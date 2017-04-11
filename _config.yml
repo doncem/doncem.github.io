@@ -22,6 +22,9 @@ gems:
 #  - jekyll-assets
   - jekyll-feed
 collections:
+  posts:
+    output: true
+    permalink: /post/:year/:month/:day/:slug
   projects:
 #assets:
 #  prefix: "/assets"

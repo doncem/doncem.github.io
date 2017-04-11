@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
   <head>
+    {% assign startsWith = page.path | slice: 0, 5 %}
     {% include header.html %}
     {% if page.path == "cv.html" %}
     <script type="text/javascript" src="/assets/jqcloud.min.js"></script>
@@ -14,12 +15,22 @@
       }
     </style>
     {% endif %}
+    {% if startsWith == "_post" %}
+    <link rel="stylesheet" href="/assets/syntax.css" />
+    {% endif %}
   </head>
 <body>
   <div class="ui inverted vertical segment">
-    {% include menu.html active=page.path %}
+    {% include menu.html active=page.path activeExtra=startsWith %}
 
+    {% comment %}A single post does need a wrapper{% endcomment %}
+    {% if startsWith == "_post" %}
+    <div class="ui tertiary very padded container segment">
     {{ content }}
+    </div>
+    {% else %}
+    {{ content }}
+    {% endif %}
 
     {% include footer.html %}
 
