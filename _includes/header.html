@@ -21,7 +21,10 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 var scriptSource = '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js';
 
-if (isMobile) scriptSource = '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js';
+if (isMobile) scriptSource = '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js';
 
 loadScript(scriptSource);
+
+if (isMobile) loadScript('//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js');
 </script>
+
