@@ -32,6 +32,7 @@ work:
     tags:
       - PHP5
       - ZF1
+      - PHPUnit
       - Twig
       - MySQL
       - LESS
@@ -49,6 +50,7 @@ work:
     description: Working with the xFrame MVC framework, writing unit tests, jQuery and SASS. Applying white labeling to multiple web sites under the same web application.
     tags:
       - PHP5
+      - PHPUnit
       - xFrame
       - Phing
       - MySQL
