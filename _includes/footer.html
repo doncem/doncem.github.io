@@ -105,9 +105,9 @@ function renderCvData() {
 
 var intervalSources = setInterval(function() {
   if (window.$) {
-    loadScript('/assets/semantic.min.js');
+    loadScript('/assets/js/semantic.min.js');
     {% if page.path == "cv.html" %}
-    loadScript('/assets/jqcloud.min.js');
+    loadScript('/assets/js/jqcloud.min.js');
     {% endif %}
     clearInterval(intervalSources);
   }

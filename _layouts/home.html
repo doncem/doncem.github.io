@@ -22,8 +22,8 @@
     {% assign startsWith = page.path | slice: 0, 5 %}
     {% include header.html %}
     {% if page.path == "cv.html" %}
-    <link rel="stylesheet" href="/assets/vertical-timeline.css" />
-    <link rel="stylesheet" href="/assets/jqcloud.min.css" />
+    <link rel="stylesheet" href="/assets/css/vertical-timeline.css" />
+    <link rel="stylesheet" href="/assets/css/jqcloud.min.css" />
     <style type="text/css">
       @media print {
         body * { visibility: hidden; }
@@ -32,9 +32,9 @@
       }
     </style>
     {% endif %}
-    <link rel="stylesheet" href="/assets/adjustments.css" />
+    <link rel="stylesheet" href="/assets/css/adjustments.css" />
     {% if startsWith == "_post" %}
-    <link rel="stylesheet" href="/assets/syntax.css" />
+    <link rel="stylesheet" href="/assets/css/syntax.css" />
     {% endif %}
   </head>
 <body>
