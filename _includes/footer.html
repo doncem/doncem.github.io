@@ -112,6 +112,11 @@ var intervalSources = setInterval(function() {
     clearInterval(intervalSources);
   }
 }, 100);
+var intervalUI = setInterval(function() {
+  if (window.$ && $().accordion) {
+    $('.ui.accordion').accordion();
+  }
+}, 100);
 {% if page.path == "cv.html" %}
 var intervalData = setInterval(function() {
   if (window.$ && $().tab && $().jQCloud) {

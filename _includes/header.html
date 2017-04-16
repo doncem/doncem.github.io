@@ -25,6 +25,12 @@ if (isMobile) scriptSource = '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jque
 
 loadScript(scriptSource);
 
-if (isMobile) loadScript('//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js');
+if (isMobile) {
+  var intervalMobile = setInterval(function() {
+    if (window.$) {
+      loadScript('//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js');
+      clearInterval(intervalMobile);
+    }
+  }, 100);
+}
 </script>
-

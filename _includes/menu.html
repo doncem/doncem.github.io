@@ -1,4 +1,4 @@
-<div class="ui inverted stackable container menu">
+<div class="ui inverted stackable container menu mobile or lower hidden">
   <a class="{% if include.active == "index.html" %}active {% endif %}item" href="{% link index.html %}">Home</a>
   <a class="{% if include.active == "cv.html" %}active {% endif %}item" href="{% link cv.html %}">CV</a>
   <a class="{% if include.active == "projects.html" %}active {% endif %}item" href="{% link projects.html %}">Projects</a>
@@ -7,5 +7,24 @@
     <div class="item">
       <a class="ui primary button" href="//github.com/doncem" target="_blank">GitHub</a>
     </div>
+  </div>
+</div>
+
+<div class="ui inverted vertical accordion borderless menu mobile only">
+  <div class="item">
+    <a class="title">
+      <i class="dropdown icon"></i>
+      <img class="ui avatar image" rel="shortcut icon" src="/assets/favicon.ico"/>
+      <span>Donatas</span>
+    </a>
+    <div class="content">
+      <a class="{% if include.active == "index.html" %}active {% endif %}item" href="{% link index.html %}">Home</a>
+      <a class="{% if include.active == "cv.html" %}active {% endif %}item" href="{% link cv.html %}">CV</a>
+      <a class="{% if include.active == "projects.html" %}active {% endif %}item" href="{% link projects.html %}">Projects</a>
+      <a class="{% if include.active == "posts.html" or include.activeExtra == "_post" %}active {% endif %}item" href="{% link posts.html %}">Posts</a>
+    </div>
+  </div>
+  <div class="item">
+    <a class="ui primary button" href="//github.com/doncem" target="_blank">GitHub</a>
   </div>
 </div>
