@@ -6,6 +6,14 @@
 <link rel="shortcut icon" href="/assets/favicon.ico" />
 <link rel="stylesheet" href="/assets/semantic.min.css" />
 <script type="text/javascript">
+window.loadScript = function(source) {
+  var elem = document.createElement('script');
+  elem.type = 'text/javascript';
+  elem.src = source;
+  elem.async = true;
+  document.head.appendChild(elem);
+};
+
 var isMobile = false; //initiate as false
 // device detection
 if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -15,10 +23,5 @@ var scriptSource = '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js';
 
 if (isMobile) scriptSource = '//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js';
 
-var scriptElem = document.createElement('script');
-scriptElem.type = 'text/javascript';
-scriptElem.src = scriptSource;
-scriptElem.async = true;
-document.head.appendChild(scriptElem);
+loadScript(scriptSource);
 </script>
-<script type="text/javascript" src="/assets/semantic.min.js" async></script>
