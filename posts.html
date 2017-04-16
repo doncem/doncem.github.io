@@ -14,7 +14,7 @@ title: Posts
         <div class="description">{{ post.excerpt | strip_html }}</div>
         <div class="extra">
           <div class="ui left floated">
-            <a class="ui primary button" href="{{ post.source }}" target="_blank">Source</a>
+            {% if post.source %}<a class="ui primary button" href="{{ post.source }}" target="_blank">Source</a>{% endif %}
             <a class="ui primary button" href="{{ post.url }}">Read more</a>
           </div>
         </div>
