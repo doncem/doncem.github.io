@@ -14,7 +14,7 @@ title: Posts
         <div class="description">{{ post.excerpt | strip_html }}</div>
         <div class="extra">
           <div class="ui left floated">
-            {% if post.source %}<a class="ui primary button" href="{{ post.source }}" target="_blank">Source</a>{% endif %}
+            {% for source in post.sources %}<a class="ui primary button" href="{{ source }}" target="_blank">Source</a>{% endfor %}
             <a class="ui primary button" href="{{ post.url }}">Read more</a>
           </div>
         </div>

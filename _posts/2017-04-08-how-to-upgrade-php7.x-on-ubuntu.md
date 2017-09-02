@@ -5,7 +5,8 @@ tags:
   - PHP7
   - php-fpm
   - nginx
-source: https://www.thinkingmedia.ca/2017/02/how-to-upgrade-php-7-0-to-php-7-1-on-ubuntu/
+sources:
+  - https://www.thinkingmedia.ca/2017/02/how-to-upgrade-php-7-0-to-php-7-1-on-ubuntu/
 ---
 
 ## Intro
