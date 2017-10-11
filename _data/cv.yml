@@ -10,10 +10,21 @@ about: |
 
   I consider myself an efficient worker who always tries to make use of best practices and I like to keep up-to-date with programming theory.
 work:
+  - place: HMCTS
+    position: Senior Software developer
+    start: 10-2017
+    end: now
+    description: Developing Java based micro-services for Reform project.
+    tags:
+      - Java
+      - Git
+      - API
+      - micro-service
+      - gradle
   - place: OnTrackRetail ltd.
     position: Senior Software developer
     start: 11-2014
-    end: now
+    end: 10-2017
     description: Developing multi micro-service based API for various rail companies to unify the unthinkable differences within rail industry.
     tags:
       - Scala
