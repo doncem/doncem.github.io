@@ -42,4 +42,16 @@
   <changefreq>monthly</changefreq>
   <priority>0.64</priority>
 </url>
+<url>
+  <loc>http://www.donatasmart.lt/post/2017/04/16/fruitless-attempts-to-get-frontend-right</loc>
+  <lastmod>2017-04-16T09:40:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://www.donatasmart.lt/post/2017/09/02/self-sign-your-local-project</loc>
+  <lastmod>2017-09-03T09:40:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
 </urlset>
