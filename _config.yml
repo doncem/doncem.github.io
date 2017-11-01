@@ -17,8 +17,8 @@ kramdown:
   input: GFM
   hard_wrap: false
 safe: true
-theme: minima
-gems:
+#theme: minima
+plugins:
 #  - jekyll-assets
   - jekyll-feed
 collections:
