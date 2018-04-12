@@ -14,20 +14,49 @@ work:
     position: Senior Software developer
     start: 10-2017
     end: now
-    description: Developing Java based micro-services for Reform project.
+    description: |
+      Participating in Reform Programme - government going paperless. Developing platform tools for other teams to reuse.
+
+      - Application template
+      - CI tools and continuous improvement
+      - API specification publish tool and visual representation
+      - Logging
+      - Job scheduling
+      - Send letter service
+      - Intermittent alteration of other projects developed by teams
+      - Various investigations e.g. Microsoft Azure AppInsights, DeadLetterQueue etc.
     tags:
       - Java
+      - Spring Boot
       - Git
       - API
       - micro-service
       - gradle
+      - terraform
   - place: OnTrackRetail ltd.
     position: Senior Software developer
     start: 11-2014
     end: 10-2017
-    description: Developing multi micro-service based API for various rail companies to unify the unthinkable differences within rail industry.
+    description: |
+      Web ticket issuing system in train jargon - WebTIS. Developing APIs for train ticket issuing components in a microservice monolith way. Idea was great, but complexity of UK trains and "build fast sort it out later" methodology led to the microservice monolith
+
+      - Services mainly touched:
+        - Collect at the station
+        - Smartcard + KeyGo support
+        - Customer API
+        - Order API
+        - Admin API
+        - Payment API
+        - Delay Repay API
+      - Participation in management planning regarding product development
+      - Minor work in admin UI
+      - Use RabbitMQ for inter-service communication
+      - BDD
+      - Sufficient test coverage and bullet proofing the services
     tags:
       - Scala
+      - sbt
+      - Akka
       - Git
       - API
       - BDD
@@ -39,7 +68,13 @@ work:
     position: Software developer
     start: 02-2012
     end: 10-2014
-    description: Developing vast variety of projects (one project includes icCube third party implementation) to upgrade and support Quidco system.
+    description: |
+      Wide scope of different kind of projects/products, covering all parts of website mostly on back-end development. few topics following:
+
+      - Dependency injection
+      - Modularising products in abstract architecture (depending on the product complexity, possibility of expansion) for easier continuous integration, improvement, packaging, testing
+      - Improving public libraries to accommodate tech department needs, indirect impact to UX stability
+      - Implementing third party products ('proxied' requests to remote tomcat server via javascript application for reports to other third party members to use; general reports; imports; apis)
     tags:
       - PHP5
       - ZF1
@@ -58,7 +93,11 @@ work:
     position: Web developer
     start: 03-2011
     end: 02-2012
-    description: Working with the xFrame MVC framework, writing unit tests, jQuery and SASS. Applying white labeling to multiple web sites under the same web application.
+    description: |
+      - Developing mytrainticket.co.uk product
+      - Supporting co-brands northernrail.org and travelsupermarket.com up-to-date
+      - Several businesses collaboration with main business logic providing individual options
+      - Development/Testing/Production environment support/upgrade/developing
     tags:
       - PHP5
       - PHPUnit
@@ -74,7 +113,12 @@ work:
     position: Web developer
     start: 03-2010
     end: 02-2011
-    description: At ReBank I began my knowledge of SVN and Zend Framework. After few months we began to re-develop ReBank system to use Zend Framework and on same side we upgraded DB (it was very unclear and inefficient).
+    description: |
+      - Develop in-house CMS used by real estate agents
+      - Upgrade company code from spaghetti to use properly orchestrated framework
+      - Clear up database from mysterious attributes
+      - Introduce source versioning
+      - Set up base application with Zend Framework 1 for new project
     tags:
       - PHP5
       - MySQL
@@ -99,6 +143,7 @@ education:
     notes: I chose stochastic profile in the third term
 skills:
   languages:
+    - Java
     - Scala
     - PHP
     - SQL
@@ -107,6 +152,7 @@ skills:
     - CSS
     - Python
   libraries:
+    - Spring Boot
     - xFrame
     - ZF1
     - jQuery
@@ -117,6 +163,8 @@ skills:
     - Semantic UI
     - Backbone
   tools:
+    - gradle
+    - sbt
     - Phing
     - SASS/LESS
     - CasperJS
