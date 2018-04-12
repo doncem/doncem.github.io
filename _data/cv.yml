@@ -190,5 +190,10 @@ classes:
         non-parametrical criteria;
         mono-factor, bi-factor and blocked data analysis of variance,
         cluster analysis, linear, multiple and logistic regression
-hobbies:
-  Judging new / old films, reading science fiction, developing something “awesome”, visiting museums, traveling and discovering new lands, collecting heavy music records
+hobbies: |
+  - Judging new / old films
+  - Reading science fiction
+  - Developing something “awesome”
+  - Visiting museums
+  - Travelling and discovering new lands
+  - Collecting heavy music records
