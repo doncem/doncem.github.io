@@ -23,6 +23,7 @@ work:
       - Logging
       - Job scheduling
       - Send letter service
+      - Feature toggle
       - Intermittent alteration of other projects developed by teams
       - Various investigations e.g. Microsoft Azure AppInsights, DeadLetterQueue etc.
     tags:
