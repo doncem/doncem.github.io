@@ -6,52 +6,47 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+
 <url>
-  <loc>http://www.donatasmart.lt/</loc>
-  <lastmod>2017-04-16T09:40:22+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://www.donatasmart.lt/</loc>
+  <lastmod>2018-06-04T08:27:01+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://www.donatasmart.lt/cv</loc>
-  <lastmod>2017-04-16T09:40:22+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://www.donatasmart.lt/cv</loc>
+  <lastmod>2018-06-04T08:27:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.donatasmart.lt/projects</loc>
-  <lastmod>2017-04-16T09:40:22+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://www.donatasmart.lt/projects</loc>
+  <lastmod>2018-06-04T08:27:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.donatasmart.lt/posts</loc>
-  <lastmod>2017-04-16T09:40:22+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://www.donatasmart.lt/posts</loc>
+  <lastmod>2018-06-04T08:27:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.donatasmart.lt/assets/cv-en.pdf</loc>
-  <lastmod>2017-04-16T09:40:22+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://www.donatasmart.lt/assets/cv-en.pdf</loc>
+  <lastmod>2018-06-04T08:26:56+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.donatasmart.lt/post/2017/04/08/how-to-upgrade-php7-x-on-ubuntu</loc>
-  <lastmod>2017-04-16T09:40:22+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://www.donatasmart.lt/post/2017/09/02/self-sign-your-local-project</loc>
+  <lastmod>2018-06-04T08:27:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.donatasmart.lt/post/2017/04/16/fruitless-attempts-to-get-frontend-right</loc>
-  <lastmod>2017-04-16T09:40:22+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://www.donatasmart.lt/post/2017/04/16/fruitless-attempts-to-get-frontend-right</loc>
+  <lastmod>2018-06-04T08:27:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>http://www.donatasmart.lt/post/2017/09/02/self-sign-your-local-project</loc>
-  <lastmod>2017-09-03T09:40:22+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://www.donatasmart.lt/post/2017/04/08/how-to-upgrade-php7-x-on-ubuntu</loc>
+  <lastmod>2018-06-04T08:27:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
+
+
 </urlset>
