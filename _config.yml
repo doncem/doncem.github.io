@@ -8,8 +8,11 @@ email: donatasmart@gmail.com
 description:
   Personal webpage
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.donatasmart.lt" # the base hostname & protocol for your site, e.g. http://example.com
+author: Donatas Martinkus <donatasmart@gmail.com>
 github_username: doncem
+
+google_site_verification: gND_iyudJzru_kmf-YSstX8_FFr7vXAFV8ajx-KbuaM
 
 # Build settings
 markdown: kramdown
@@ -21,6 +24,7 @@ safe: true
 plugins:
 #  - jekyll-assets
   - jekyll-feed
+  - jekyll-seo-tag
 collections:
   posts:
     output: true
