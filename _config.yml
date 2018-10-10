@@ -19,12 +19,12 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-safe: true
 #theme: minima
 plugins:
 #  - jekyll-assets
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 collections:
   posts:
     output: true
