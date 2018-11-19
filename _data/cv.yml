@@ -5,7 +5,10 @@ contact:
     value: donatasmart@gmail.com
 about: |
   I am a software engineer with over 5 years of experience in PHP and MySQL.
-  And 2 years of intense Scala learning curve, applied in building multi micro-service API platform.
+  2 years of intense Scala learning curve, applied in building multi micro-service API platform.
+
+  Further years just confirm process of development is not the issue with me.
+
   My personal experiments are mostly developed with latest libs cloned from Git repositories.
 
   I consider myself an efficient worker who always tries to make use of best practices and I like to keep up-to-date with programming theory.
@@ -24,6 +27,7 @@ work:
       - Job scheduling
       - Send letter service
       - Feature toggle
+      - Bulk scanning
       - Intermittent alteration of other projects developed by teams
       - Various investigations e.g. Microsoft Azure AppInsights, DeadLetterQueue etc.
     tags:
@@ -34,6 +38,7 @@ work:
       - micro-service
       - gradle
       - terraform
+      - kotlin
   - place: OnTrackRetail ltd.
     position: Senior Software developer
     start: 11-2014
