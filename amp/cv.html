@@ -1,0 +1,117 @@
+---
+layout: amp
+permalink: /amp/cv
+title: CV
+---
+
+<div class="ui container" id="printable">
+  <div class="ui one column grid">
+    <div class="row">
+      <div class="column">
+        <a href="https://uk.linkedin.com/in/donatasmart" class="ui inverted primary button" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui two doubling cards">
+    {% if site.data.cv.contact.size > 0 %}
+    <div class="card">
+      <div class="content">
+        <div class="header">Contact</div>
+        <div class="description">
+          {% for contact in site.data.cv.contact %}
+          <p><strong>{{ contact.type }}</strong>: {{ contact.value }}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if site.data.cv.about.size > 0 %}
+    <div class="card">
+      <div class="content">
+        <div class="header">About</div>
+        <div class="description">
+          {{ site.data.cv.about | markdownify }}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% for work in site.data.cv.work %}
+    <div class="card">
+      <div class="content">
+        <div class="header">Work - {{ work.place }}</div>
+        <div class="meta">
+          <span>{{ work.position }}</span>
+          <span>{{ work.start }} - {{ work.end }}</span>
+        </div>
+        <div class="description">
+          {{ work.description | markdownify }}
+        </div>
+      </div>
+      <div class="extra content">
+        {{ work.tags | array_to_sentence_string }}
+      </div>
+    </div>
+    {% endfor %}
+    {% for education in site.data.cv.education %}
+    <div class="card">
+      <div class="content">
+        <div class="header">Education - {{ education.name }}</div>
+        <div class="meta">
+          <span>{{ education.school }}</span>
+          <span>{{ education.degree }}</span>
+          <span>{{ education.start }} - {{ education.end }}</span>
+        </div>
+        <div class="description">
+          {% if education.notes.size > 0 %}
+          <p><strong>Additional notes</strong>: {{ education.notes }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="card">
+      <div class="content">
+        <div class="header">Technical skills</div>
+        <div class="description">
+          {% if site.data.cv.skills.languages.size > 0 %}
+          <p><strong>Languages</strong>: {{ site.data.cv.skills.languages | array_to_sentence_string }}</p>
+          {% endif %}
+          {% if site.data.cv.skills.libraries.size > 0 %}
+          <p><strong>Libraries</strong>: {{ site.data.cv.skills.libraries | array_to_sentence_string }}</p>
+          {% endif %}
+          {% if site.data.cv.skills.tools.size > 0 %}
+          <p><strong>Tools/Utils</strong>: {{ site.data.cv.skills.tools | array_to_sentence_string }}</p>
+          {% endif %}
+          {% if site.data.cv.skills.vcs.size > 0 %}
+          <p><strong>VCS</strong>: {{ site.data.cv.skills.vcs | array_to_sentence_string }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% for cc in site.data.cv.classes %}
+    <div class="card">
+      <div class="content">
+        <div class="header">Classes and certificates - {{ cc.title }}</div>
+        <div class="meta">
+          <span>{{ cc.start }} - {{ cc.end }}</span>
+        </div>
+        <div class="description">
+          <p><strong>Organiser</strong>: {{ cc.organiser }}</p>
+          {% if cc.notes.size > 0 %}
+          <p><strong>Additional notes</strong>: {{ cc.notes }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="card">
+      <div class="content">
+        <div class="header">Hobbies</div>
+        <div class="description">
+          {{ site.data.cv.hobbies | markdownify }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

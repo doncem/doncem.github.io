@@ -1,8 +1,8 @@
 <div class="ui inverted stackable container menu mobile or lower hidden">
-  <a class="{% if include.active == "index.html" %}active {% endif %}item" href="{% link index.html %}">Home</a>
-  <a class="{% if include.active == "cv.html" %}active {% endif %}item" href="{% link cv.html %}">CV</a>
-  <a class="{% if include.active == "projects.html" %}active {% endif %}item" href="{% link projects.html %}">Projects</a>
-  <a class="{% if include.active == "posts.html" or include.activeExtra == "_post" %}active {% endif %}item" href="{% link posts.html %}">Posts</a>
+  <a class="{% if include.active == "index.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link index.html %}">Home</a>
+  <a class="{% if include.active == "cv.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link cv.html %}">CV</a>
+  <a class="{% if include.active == "projects.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link projects.html %}">Projects</a>
+  <a class="{% if include.active == "posts.html" or include.activeExtra == "_post" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link posts.html %}">Posts</a>
   <div class="right menu">
     <div class="item">
       <a class="ui primary button" href="//github.com/doncem" target="_blank">GitHub</a>
@@ -18,10 +18,10 @@
       <span>Donatas</span>
     </a>
     <div class="content">
-      <a class="{% if include.active == "index.html" %}active {% endif %}item" href="{% link index.html %}">Home</a>
-      <a class="{% if include.active == "cv.html" %}active {% endif %}item" href="{% link cv.html %}">CV</a>
-      <a class="{% if include.active == "projects.html" %}active {% endif %}item" href="{% link projects.html %}">Projects</a>
-      <a class="{% if include.active == "posts.html" or include.activeExtra == "_post" %}active {% endif %}item" href="{% link posts.html %}">Posts</a>
+      <a class="{% if include.active == "index.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link index.html %}">Home</a>
+      <a class="{% if include.active == "cv.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link cv.html %}">CV</a>
+      <a class="{% if include.active == "projects.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link projects.html %}">Projects</a>
+      <a class="{% if include.active == "posts.html" or include.activeExtra == "_post" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link posts.html %}">Posts</a>
     </div>
   </div>
   <div class="item">

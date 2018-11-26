@@ -20,6 +20,7 @@
     </script>
     <!-- Google Analytics end -->
     {% assign startsWith = page.path | slice: 0, 5 %}
+    {% assign ampStartsWith = page.path | slice: 3, 6 %}
     {% include header.html %}
     {% if page.path == "cv.html" %}
     <link rel="stylesheet" href="/assets/css/vertical-timeline.css" />
@@ -33,17 +34,22 @@
     </style>
     {% endif %}
     <link rel="stylesheet" href="/assets/css/adjustments.css" />
-    {% if startsWith == "_post" %}
+    {% if startsWith == "_post" or ampStartsWith == "/post/" %}
     <link rel="stylesheet" href="/assets/css/atom-one-dark-pygment.css" />
+    {% endif %}
+    {% if page.path contains '_posts' %}
+      <link rel="amphtml" href="{{ page.id | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}">
+    {% else %}
+      <link rel="amphtml" href="/amp/{{ page.url | replace_first:'/','' }}" />
     {% endif %}
     {% seo %}
   </head>
 <body>
   <div class="ui inverted vertical segment">
-    {% include menu.html active=page.path activeExtra=startsWith %}
+    {% include menu.html active=page.path activeExtra=startsWith isAmp="0" %}
 
     {% comment %}A single post does need a wrapper{% endcomment %}
-    {% if startsWith == "_post" %}
+    {% if startsWith == "_post" or ampStartsWith == "/post/" %}
     <div class="ui tertiary very padded container segment">
     {{ content }}
     </div>
