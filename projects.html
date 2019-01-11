@@ -29,6 +29,9 @@ title: Projects
             {% if project.zip.size > 0 %}
             <a class="ui primary button" href="{{ project.zip }}" target="_blank">Link to .zip</a>
             {% endif %}
+            {% if project.js-exec.size > 0 %}
+            <button class="ui primary button" onclick="{{ project.js-exec }}()">Go!</button>
+            {% endif %}
           </div>
         </div>
       </div>
