@@ -2,7 +2,7 @@
 order: 9
 title: Conway's Game of Life
 tags:
-  - javascript
+  - JavaScript
 published: 05-2018
 link: https://github.com/doncem/game-of-life
 js-exec: gameOfLife
