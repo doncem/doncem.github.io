@@ -8,7 +8,7 @@ title: Projects
     <p>Websites are not my favourite activity because then I have to deal with a client and, usually, they are really hard to communicate with. Especially when knowledge about business, production, even minor technical questions are UFOs. Any download button will <strong>NOT</strong> have source code</p>
   </div>
   <div class="ui relaxed divided items">
-    {% assign sorted = site.projects | sort: "order" %}
+    {% assign sorted = site.projects | sort: "order" | reverse %}
     {% for project in sorted %}
     <div class="item">
       <div class="middle aligned content">
