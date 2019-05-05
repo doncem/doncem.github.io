@@ -19,7 +19,12 @@ function renderCvData() {
         {% assign year_end = "01-" | append: work.end | date: "%Y" %}
         {% assign month_end = "01-" | append: work.end | date: "%m" %}
       {% endif %}
-      {% assign period = year_end | minus: year_start | times: 12 | plus: month_end | minus: month_start | plus: 0.0 | divided_by: 6 | ceil %}
+      {% if work.end == "now" %}
+        {% assign period = year_end | minus: year_start | times: 12 | plus: month_end | minus: month_start | plus: 0.0 | divided_by: 6 | ceil %}
+      {% else %}
+        {% assign period = year_end | minus: year_start | at_most: 5 | times: 12 | plus: month_end | minus: month_start | plus: 0.0 | divided_by: 6 | ceil %}
+      {% endif %}
+      {% assign amended_period = %}
       {% for tag in work.tags %}
         {% for i in (1..period) %}
         "{{ tag }}",
