@@ -4,32 +4,32 @@ contact:
   - type: Email
     value: donatasmart@gmail.com
 about: |
-  I am a software engineer with over 5 years of experience in PHP and MySQL.
-  2 years of intense Scala learning curve, applied in building multi micro-service API platform.
-
-  Further years just confirm process of development is not the issue with me.
-
-  My personal experiments are mostly developed with latest libs cloned from Git repositories.
-
-  I consider myself an efficient worker who always tries to make use of best practices and I like to keep up-to-date with programming theory.
+  Security cleared software developer with extensive experience of a wide-range of technologies. Looking for a new role to apply my skills.
+  10+ years’ experience in public and private sectors, including real-estate, online retail, rail, and government services.
+  Strong expertise in Java, Scala, PHP, and frontend web-development, including major frameworks.
+  Strong experience with full life-cycle software engineering, including project management techniques such as Waterfall/Scrum/Agile and continuous integration/continuous deployment tools.
+  
+  Roles and specific experience outlined below, for more information please refer to my LinkedIn profile or send me an email.
 work:
   - place: HMCTS
     position: Senior Software developer
     start: 10-2017
     end: now
     description: |
-      Participating in Reform Programme - government going paperless. Developing platform tools for other teams to reuse.
+      Participating in Reform Programme - government going paperless.
+      Developing platform tools for other teams to reuse.
 
-      - Application template
-      - CI tools and continuous improvement
-      - API specification publish tool and visual representation
-      - Logging
-      - Job scheduling
-      - Send letter service
-      - Feature toggle
-      - Bulk scanning
-      - Intermittent alteration of other projects developed by teams
-      - Various investigations e.g. Microsoft Azure AppInsights, DeadLetterQueue etc.
+      - Projects:
+        - Application template
+        - Logging
+        -	Job scheduling
+        -	Send letter service
+        -	Feature toggle
+        -	Bulk scan handling
+      -	CI tools and continuous improvement
+      -	API specification publish tool and visual representation
+      -	Intermittent alteration of other projects developed by teams
+      -	Various investigation e.g. Microsoft Azure AppInsights, DeadLetterQueue etc.
     tags:
       - Java
       - Spring Boot
@@ -38,7 +38,6 @@ work:
       - micro-service
       - gradle
       - terraform
-      - kotlin
   - place: OnTrackRetail ltd.
     position: Senior Software developer
     start: 11-2014
@@ -46,7 +45,7 @@ work:
     description: |
       Web ticket issuing system in train jargon - WebTIS. Developing APIs for train ticket issuing components in a microservice monolith way. Idea was great, but complexity of UK trains and "build fast sort it out later" methodology led to the microservice monolith
 
-      - Services mainly touched:
+      - Projects:
         - Collect at the station
         - Smartcard + KeyGo support
         - Customer API
@@ -183,6 +182,10 @@ skills:
     - Git
     - SVN
 classes:
+  - title: Security Check Clearance
+    start: 20-03-2019
+    end: 19-03-2026
+    organiser: MoJ
   - title: Scientific results of statistical methods, statistics with SPSS
     start: 28-01-2006
     end: 31-01-2006
