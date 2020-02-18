@@ -1,10 +1,11 @@
 ---
-order: 8
+order: 9
 title: DonaLora
 tags:
   - PHP7
   - Twig
   - OpenCart
+  - e-commerce
 published: 06-2018
 link: https://www.donalora.com
 ---

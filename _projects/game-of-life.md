@@ -1,5 +1,5 @@
 ---
-order: 9
+order: 8
 title: Conway's Game of Life
 tags:
   - JavaScript
