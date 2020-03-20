@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Personal page",
   "main": "_site/index.html",
-  "dependencies": {
-    "semantic-ui": "^2.4.2"
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "semantic-ui": "Semantic-Org/Semantic-UI.git#gulp-4"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
