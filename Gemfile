@@ -21,7 +21,7 @@ gem "jekyll", "3.8.5"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
 #   gem "jekyll-assets"
-   gem "jekyll-feed", "~> 0.11.0"
-   gem "jekyll-seo-tag", "2.5.0"
-   gem "jekyll-sitemap", "1.2.0"
+   gem "jekyll-feed", "~> 0.13.0"
+   gem "jekyll-seo-tag", "2.6.1"
+   gem "jekyll-sitemap", "1.4.0"
 end
