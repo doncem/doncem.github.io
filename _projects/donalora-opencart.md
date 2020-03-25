@@ -1,6 +1,6 @@
 ---
 order: 9
-title: DonaLora
+title: DonaLora (decommissioned)
 tags:
   - PHP7
   - Twig
