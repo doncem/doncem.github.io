@@ -71,7 +71,7 @@ But ever since I wanted Linux.
 It just stuck to me.
 Fitted best.
 
-Well, I had various Linux OS's in my personal laptop.
+Well, I had various Linux OS's on my personal laptop.
 Challanges surpassed, one thing led to another - I'm finally using laptop for work.
 And home.
 
