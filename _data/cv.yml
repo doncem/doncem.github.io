@@ -26,8 +26,12 @@ work:
         -	Send letter service
         -	Feature toggle
         -	Bulk scan handling
+        - Infrastructure and orchestration of more global Bulk Scan component
       -	CI tools and continuous improvement
       -	API specification publish tool and visual representation
+      - Introduction to Java 11 and dawn of Java React usage
+      - Migration to Java 11
+      - PACT testing
       -	Intermittent alteration of other projects developed by teams
       -	Various investigation e.g. Microsoft Azure AppInsights, DeadLetterQueue etc.
     tags:
