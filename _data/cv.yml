@@ -4,7 +4,7 @@ contact:
   - type: Email
     value: donatasmart@gmail.com
 about: |
-  Security cleared software developer with extensive experience of a wide-range of technologies. Looking for a new role to apply my skills.
+  Security cleared software developer with extensive experience of a wide-range of technologies.
   10+ years’ experience in public and private sectors, including real-estate, online retail, rail, and government services.
   Strong expertise in Java, Scala, PHP, and frontend web-development, including major frameworks.
   Strong experience with full life-cycle software engineering, including project management techniques such as Waterfall/Scrum/Agile and continuous integration/continuous deployment tools.
@@ -14,7 +14,7 @@ work:
   - place: HMCTS
     position: Senior Software developer
     start: 10-2017
-    end: now
+    end: 09-2020
     description: |
       Participating in Reform Programme - government going paperless.
       Developing platform tools for other teams to reuse.
