@@ -53,6 +53,69 @@ function renderCvData() {
     ""
   ];
 
+  var categories = {
+    // cv
+    "SQL": "language",
+    "MS Office": "tool",
+    "ABBYY FineReader": "tool",
+    "PHP5": "language",
+    "CSS": "language",
+    "JavaScript": "language",
+    "SVN": "vcs",
+    "ZF1": "library",
+    "PHPUnit": "tool",
+    "xFrame": "library",
+    "Phing": "tool",
+    "jQuery": "library",
+    "XSTL": "language",
+    "SASS": "tool",
+    "BackboneJS": "library",
+    "Twig": "library",
+    "LESS": "tool",
+    "Twitter Bootstrap": "library",
+    "Doctrine": "library",
+    "Smarty": "library",
+    "composer": "tool",
+    "Git": "tool",
+    "Scala": "language",
+    "sbt": "tool",
+    "Akka": "library",
+    "API": "principal",
+    "BDD": "principal",
+    "micro-service": "principal",
+    "ansible": "tool",
+    "Team lead": "principal",
+    "Java": "language",
+    "Spring Boot": "library",
+    "gradle": "tool",
+    "terraform": "tool",
+    "maven": "tool",
+    "kafka": "tool",
+    // posts
+    "PHP7": "language",
+    "php-fpm": "tool",
+    "nginx": "tool",
+    "Semantic UI": "tool",
+    "mobile": "principal",
+    "ssl": "principal",
+    "self-sign": "principal",
+    "windows": "OS",
+    "macOS": "OS",
+    "linux": "OS",
+    "hobby": "personal",
+    "music": "personal",
+    // projects
+    "wordpress": "tool",
+    "markdown": "language",
+    "jekyll": "tool",
+    "github": "tool",
+    "blog": "principal",
+    "OpenCart": "tool",
+    "e-commerce": "principal",
+    "fs2": "library",
+    "Wix": "principal"
+  };
+
   var words = function(tags) {
     var counted = tags.reduce(function(a, b) {
       if (b != "") {
@@ -65,7 +128,7 @@ function renderCvData() {
     var w = [];
 
     for (var key in counted) {
-      if (counted.hasOwnProperty(key)) w.push({x: key, value: counted[key], category: "general"});
+      if (counted.hasOwnProperty(key)) w.push({x: key, value: counted[key], category: categories[key]});
     }
 
     return w;
