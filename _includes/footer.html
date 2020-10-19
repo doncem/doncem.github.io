@@ -4,6 +4,9 @@
   </div>
 </div>
 
+<script src="//cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+<script src="//cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+
 {% if page.path == "projects.html" %}<script type="text/javascript" src="/assets/js/game-of-life.js"></script>{% endif %}
 <script type="text/javascript">
 {% if page.path == "cv.html" %}
@@ -61,47 +64,35 @@ function renderCvData() {
 
     var w = [];
 
-    for (key in counted) {
-      if (counted.hasOwnProperty(key)) w.push({text: key, weight: counted[key]});
+    for (var key in counted) {
+      if (counted.hasOwnProperty(key)) w.push({x: key, value: counted[key], category: "general"});
     }
 
     return w;
   };
 
-  var colours = [
-    "#FFBF00",//amber
-//    "#FF9933",//deep saffron
-    "#FF55A3",//brilliant rose
-//    "#FF3800",//coquelicot
-    "#FF2052",//awesome
-    "#EF3038",//deep carmine pink
-    "#AC1E44",//french wine
-    "#9932CC",//dark orchid
-    "#8DB600",//apple green
-    "#6F00FF",//electric indigo
-    "#568203",//avocado
-    "#2E2D88",//cosmic cobalt
-    "#03C03C",//dark pastel green
-    "#000000"//black
-  ];
-
   $('.menu .item').tab({
     onFirstLoad: function(data) {
       if (data == "tags") {
-        $('#tag-cloud-work').jQCloud(words(workTags), {
-          height: 400,
-          autoResize: true,
-          colors: colours
-        });
-        $('#tag-cloud-work-projects').jQCloud(words(workTags.concat(projectTags)), {
-          height: 400,
-          autoResize: true,
-          colors: colours
-        });
-        $('#tag-cloud-work-projects-posts').jQCloud(words(workTags.concat(projectTags).concat(postsTags)), {
-          height: 400,
-          autoResize: true,
-          colors: colours
+        anychart.onDocumentReady(function() {
+          var chart = anychart.tagCloud(words(workTags));
+          chart.title('Work tags');
+          chart.angles([0]);
+          chart.colorRange(true);
+          chart.container('tag-cloud-work');
+          chart.draw();
+          chart = anychart.tagCloud(words(workTags.concat(projectTags)));
+          chart.title('Work + Project tags');
+          chart.angles([0]);
+          chart.colorRange(true);
+          chart.container('tag-cloud-work-projects');
+          chart.draw();
+          chart = anychart.tagCloud(words(workTags.concat(projectTags).concat(postsTags)));
+          chart.title('Work + Project + Posts tags');
+          chart.angles([0]);
+          chart.colorRange(true);
+          chart.container('tag-cloud-work-projects-posts');
+          chart.draw();
         });
       }
     }
@@ -112,9 +103,6 @@ function renderCvData() {
 var intervalSources = setInterval(function() {
   if (window.$) {
     loadScript('/assets/js/semantic.min.js');
-    {% if page.path == "cv.html" %}
-    loadScript('/assets/js/jqcloud.min.js');
-    {% endif %}
     clearInterval(intervalSources);
   }
 }, 100);
@@ -125,7 +113,7 @@ var intervalUI = setInterval(function() {
 }, 100);
 {% if page.path == "cv.html" %}
 var intervalData = setInterval(function() {
-  if (window.$ && $().tab && $().jQCloud) {
+  if (window.$ && $().tab) {
     renderCvData();
     clearInterval(intervalData);
   }
