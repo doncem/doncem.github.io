@@ -8,9 +8,23 @@ about: |
   10+ years’ experience in public and private sectors, including real-estate, online retail, rail, and government services.
   Strong expertise in Java, Scala, PHP, and frontend web-development, including major frameworks.
   Strong experience with full life-cycle software engineering, including project management techniques such as Waterfall/Scrum/Agile and continuous integration/continuous deployment tools.
-  
+
   Roles and specific experience outlined below, for more information please refer to my LinkedIn profile or send me an email.
 work:
+  - place: TBD
+    position: Senior Software developer
+    start: 09-2020
+    end: now
+    description: |
+      TBD
+    tags:
+      - Java
+      - Spring Boot
+      - Git
+      - API
+      - micro-service
+      - maven
+      - kafka
   - place: HMCTS
     position: Senior Software developer
     start: 10-2017
