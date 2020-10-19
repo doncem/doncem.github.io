@@ -83,7 +83,6 @@ work:
       - Git
       - API
       - BDD
-      - SQL
       - micro-service
       - ansible
       - Team lead
@@ -103,9 +102,10 @@ work:
       - ZF1
       - PHPUnit
       - Twig
-      - MySQL
+      - SQL
       - LESS
       - Twitter Bootstrap
+      - Doctrine
       - Smarty
       - jQuery
       - composer
@@ -126,7 +126,7 @@ work:
       - PHPUnit
       - xFrame
       - Phing
-      - MySQL
+      - SQL
       - jQuery
       - XSTL
       - SASS
@@ -144,7 +144,7 @@ work:
       - Set up base application with Zend Framework 1 for new project
     tags:
       - PHP5
-      - MySQL
+      - SQL
       - CSS
       - JavaScript
       - SVN
@@ -189,6 +189,9 @@ skills:
   tools:
     - gradle
     - sbt
+    - terraform
+    - ansible
+    - maven
     - Phing
     - SASS/LESS
     - CasperJS
