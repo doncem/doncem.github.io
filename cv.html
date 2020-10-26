@@ -4,143 +4,126 @@ permalink: /cv
 title: CV
 ---
 
-<div class="ui container" id="printable">
-  <div class="ui one column grid">
-    <div class="row">
-      <div class="column">
-        <a href="/assets/cv-en.pdf" class="ui inverted download primary button">CV, reviewed July 2019</a>
-        <a href="https://uk.linkedin.com/in/donatasmart" class="ui inverted primary button" target="_blank">LinkedIn</a>
+<div class="tabs">
+  <ul>
+    <li class="is-active"><a data-target="cv-tab-cards">Cards</a></li>
+    <li><a data-target="cv-tab-timeline">Timeline</a></li>
+    <li><a data-target="cv-tab-tags">Tags</a></li>
+  </ul>
+</div>
+<div id="cv-tab-cards" class="tab-target">
+  <div class="columns is-flex-wrap-wrap">
+    {% if site.data.cv.contact.size > 0 %}
+    <article class="column is-half box">
+      <p class="title">Contact</p>
+      <div class="content">
+        {% for contact in site.data.cv.contact %}
+        <p><strong>{{ contact.type }}</strong>: {{ contact.value }}</p>
+        {% endfor %}
+      </div>
+    </article>
+    {% endif %}
+    {% if site.data.cv.about.size > 0 %}
+    <article class="column is-half box">
+      <p class="title">About</p>
+      <div class="content">
+        {{ site.data.cv.about | markdownify }}
+      </div>
+    </article>
+    {% endif %}
+    {% for work in site.data.cv.work %}
+    <article class="column is-half box">
+      <p class="title">Work - {{ work.place }}</p>
+      <p class="subtitle">
+        <span>{{ work.position }}</span>
+        <span>{{ work.start }} - {{ work.end }}</span>
+      </p>
+      <div class="content">
+        {{ work.description | markdownify }}
+      </div>
+      <div class="extra content">
+        {{ work.tags | array_to_sentence_string }}
+      </div>
+    </article>
+    {% endfor %}
+    {% for education in site.data.cv.education %}
+    <article class="column is-half box">
+      <p class="title">Education - {{ education.name }}</p>
+      <p class="subtitle">
+        <span>{{ education.school }}</span>
+        <span>{{ education.degree }}</span>
+        <span>{{ education.start }} - {{ education.end }}</span>
+      </p>
+      <div class="content">
+        {% if education.notes.size > 0 %}
+        <p><strong>Additional notes</strong>: {{ education.notes }}</p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+    <article class="column is-half box">
+      <p class="title">Technical skills</p>
+      <div class="content">
+        {% if site.data.cv.skills.languages.size > 0 %}
+        <p><strong>Languages</strong>: {{ site.data.cv.skills.languages | array_to_sentence_string }}</p>
+        {% endif %}
+        {% if site.data.cv.skills.libraries.size > 0 %}
+        <p><strong>Libraries</strong>: {{ site.data.cv.skills.libraries | array_to_sentence_string }}</p>
+        {% endif %}
+        {% if site.data.cv.skills.tools.size > 0 %}
+        <p><strong>Tools/Utils</strong>: {{ site.data.cv.skills.tools | array_to_sentence_string }}</p>
+        {% endif %}
+        {% if site.data.cv.skills.vcs.size > 0 %}
+        <p><strong>VCS</strong>: {{ site.data.cv.skills.vcs | array_to_sentence_string }}</p>
+        {% endif %}
+      </div>
+    </article>
+    {% for cc in site.data.cv.classes %}
+    <article class="column is-half box">
+      <p class="title">Classes and certificates - {{ cc.title }}</p>
+      <p class="meta">
+        <span>{{ cc.start }} - {{ cc.end }}</span>
+      </p>
+      <div class="content">
+        <p><strong>Organiser</strong>: {{ cc.organiser }}</p>
+        {% if cc.notes.size > 0 %}
+        <p><strong>Additional notes</strong>: {{ cc.notes }}</p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+    <article class="column is-half box">
+      <p class="title">Hobbies</p>
+      <div class="content">
+        {{ site.data.cv.hobbies | markdownify }}
+      </div>
+    </article>
+  </div>
+</div>
+<div id="cv-tab-timeline" class="tab-target is-hidden">
+  <div class="timeline is-centered">
+    <header class="timeline-header">
+      <span class="tag is-medium is-primary">Start</span>
+    </header>
+    <div class="timeline-item is-primary">
+      <div class="timeline-marker is-primary"></div>
+      <div class="timeline-content">
+        <p class="heading">January 2016</p>
+        <p>Timeline content - Can include any HTML element</p>
       </div>
     </div>
-  </div>
-  <div class="ui divider"></div>
-  <div class="ui one column grid">
-    <div class="row">
-      <div class="column">
-        <p>If you print this page, you should only see active tab contents in the print preview</p>
-      </div>
-    </div>
-  </div>
-  <div class="ui inverted top attached tabular menu">
-    <a class="active item" data-tab="cards">Cards</a>
-    <a class="item" data-tab="timeline">Timeline</a>
-    <a class="item" data-tab="tags">Tags</a>
-  </div>
-  <div class="ui tertiary bottom attached active tab segment" data-tab="cards">
-    <div class="ui two doubling cards">
-      {% if site.data.cv.contact.size > 0 %}
-      <div class="card">
-        <div class="content">
-          <div class="header">Contact</div>
-          <div class="description">
+    {% if site.data.cv.contact.size > 0 %}
+      <div class="timeline-item is-primary">
+        <div class="timeline-marker is-primary"></div>
+        <div class="timeline-content">
+          <p class="heading">{{ site.time | date_to_string }}</p>
+          <div class="content">
+            <h2>Contact</h2>
             {% for contact in site.data.cv.contact %}
             <p><strong>{{ contact.type }}</strong>: {{ contact.value }}</p>
             {% endfor %}
+            <span class="cd-date hidden"></span>
           </div>
-        </div>
-      </div>
-      {% endif %}
-      {% if site.data.cv.about.size > 0 %}
-      <div class="card">
-        <div class="content">
-          <div class="header">About</div>
-          <div class="description">
-            {{ site.data.cv.about | markdownify }}
-          </div>
-        </div>
-      </div>
-      {% endif %}
-      {% for work in site.data.cv.work %}
-      <div class="card">
-        <div class="content">
-          <div class="header">Work - {{ work.place }}</div>
-          <div class="meta">
-            <span>{{ work.position }}</span>
-            <span>{{ work.start }} - {{ work.end }}</span>
-          </div>
-          <div class="description">
-            {{ work.description | markdownify }}
-          </div>
-        </div>
-        <div class="extra content">
-          {{ work.tags | array_to_sentence_string }}
-        </div>
-      </div>
-      {% endfor %}
-      {% for education in site.data.cv.education %}
-      <div class="card">
-        <div class="content">
-          <div class="header">Education - {{ education.name }}</div>
-          <div class="meta">
-            <span>{{ education.school }}</span>
-            <span>{{ education.degree }}</span>
-            <span>{{ education.start }} - {{ education.end }}</span>
-          </div>
-          <div class="description">
-            {% if education.notes.size > 0 %}
-            <p><strong>Additional notes</strong>: {{ education.notes }}</p>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      <div class="card">
-        <div class="content">
-          <div class="header">Technical skills</div>
-          <div class="description">
-            {% if site.data.cv.skills.languages.size > 0 %}
-            <p><strong>Languages</strong>: {{ site.data.cv.skills.languages | array_to_sentence_string }}</p>
-            {% endif %}
-            {% if site.data.cv.skills.libraries.size > 0 %}
-            <p><strong>Libraries</strong>: {{ site.data.cv.skills.libraries | array_to_sentence_string }}</p>
-            {% endif %}
-            {% if site.data.cv.skills.tools.size > 0 %}
-            <p><strong>Tools/Utils</strong>: {{ site.data.cv.skills.tools | array_to_sentence_string }}</p>
-            {% endif %}
-            {% if site.data.cv.skills.vcs.size > 0 %}
-            <p><strong>VCS</strong>: {{ site.data.cv.skills.vcs | array_to_sentence_string }}</p>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      {% for cc in site.data.cv.classes %}
-      <div class="card">
-        <div class="content">
-          <div class="header">Classes and certificates - {{ cc.title }}</div>
-          <div class="meta">
-            <span>{{ cc.start }} - {{ cc.end }}</span>
-          </div>
-          <div class="description">
-            <p><strong>Organiser</strong>: {{ cc.organiser }}</p>
-            {% if cc.notes.size > 0 %}
-            <p><strong>Additional notes</strong>: {{ cc.notes }}</p>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      <div class="card">
-        <div class="content">
-          <div class="header">Hobbies</div>
-          <div class="description">
-            {{ site.data.cv.hobbies | markdownify }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="ui tertiary bottom attached tab segment" data-tab="timeline">
-    <section id="cd-timeline">
-      {% if site.data.cv.contact.size > 0 %}
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-picture">
-        </div>
-        <div class="cd-timeline-content">
-          <h2>Contact</h2>
-          {% for contact in site.data.cv.contact %}
-          <p><strong>{{ contact.type }}</strong>: {{ contact.value }}</p>
-          {% endfor %}
-          <span class="cd-date hidden">{{ site.time | date_to_string }}</span>
         </div>
       </div>
       {% endif %}
@@ -223,6 +206,55 @@ title: CV
           <span class="cd-date hidden">{{ site.time | date_to_string }}</span>
         </div>
       </div>
+    <div class="timeline-item is-warning">
+      <div class="timeline-marker is-warning is-image is-32x32">
+        <img src="https://bulma.io/images/placeholders/32x32.png">
+      </div>
+      <div class="timeline-content">
+        <p class="heading">February 2016</p>
+        <p>Timeline content - Can include any HTML element</p>
+      </div>
+    </div>
+    <header class="timeline-header">
+      <span class="tag is-primary">2017</span>
+    </header>
+    <div class="timeline-item is-danger">
+      <div class="timeline-marker is-danger is-icon">
+        <i class="fa fa-flag"></i>
+      </div>
+      <div class="timeline-content">
+        <p class="heading">March 2017</p>
+        <p>Timeline content - Can include any HTML element</p>
+      </div>
+    </div>
+    <header class="timeline-header">
+      <span class="tag is-medium is-primary">End</span>
+    </header>
+  </div>
+</div>
+<div id="cv-tab-tags" class="tab-target is-hidden"></div>
+<!--
+<div class="ui container" id="printable">
+  <div class="ui one column grid">
+    <div class="row">
+      <div class="column">
+        <a href="/assets/cv-en.pdf" class="ui inverted download primary button">CV, reviewed July 2019</a>
+        <a href="https://uk.linkedin.com/in/donatasmart" class="ui inverted primary button" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui one column grid">
+    <div class="row">
+      <div class="column">
+        <p>If you print this page, you should only see active tab contents in the print preview</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui tertiary bottom attached tab segment" data-tab="timeline">
+    <section id="cd-timeline">
+
     </section>
   </div>
   <div class="ui tertiary bottom attached tab segment" data-tab="tags">
@@ -235,4 +267,4 @@ title: CV
     <p>Work + projects + posts:</p>
     <div id="tag-cloud-work-projects-posts" class="segment tag-cloud"></div>
   </div>
-</div>
+</div> -->
