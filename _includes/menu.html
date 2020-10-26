@@ -1,30 +1,30 @@
-<div class="ui inverted stackable container menu mobile or lower hidden">
-  <a class="{% if include.active == "index.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link index.html %}">Home</a>
-  <a class="{% if include.active == "cv.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link cv.html %}">CV</a>
-  <a class="{% if include.active == "projects.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link projects.html %}">Projects</a>
-  <a class="{% if include.active == "posts.html" or include.activeExtra == "_post" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link posts.html %}">Posts</a>
-  <div class="right menu">
-    <div class="item">
-      <a class="ui primary button" href="//github.com/doncem" target="_blank">GitHub</a>
-    </div>
-  </div>
-</div>
-
-<div class="ui inverted vertical accordion borderless menu mobile only">
-  <div class="item">
-    <a class="title">
-      <i class="dropdown icon"></i>
-      <img class="ui avatar image" rel="shortcut icon" src="/assets/favicon.ico"/>
-      <span>Donatas</span>
+<nav class="navbar is-dark is-spaced" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <!-- <a class="navbar-item" href="/">
+      <img src="/assets/favicon.ico" alt="icon" />
     </a>
-    <div class="content">
-      <a class="{% if include.active == "index.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link index.html %}">Home</a>
-      <a class="{% if include.active == "cv.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link cv.html %}">CV</a>
-      <a class="{% if include.active == "projects.html" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link projects.html %}">Projects</a>
-      <a class="{% if include.active == "posts.html" or include.activeExtra == "_post" %}active {% endif %}item" href="{% if include.isAmp == "1" %}/amp{% endif %}{% link posts.html %}">Posts</a>
+ -->
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="main-menu" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item{% if include.active == "index.html" %} is-active{% endif %}" href="{% link index.html %}">Home</a>
+      <a class="navbar-item{% if include.active == "cv.html" %} is-active{% endif %}" href="{% link cv.html %}">CV</a>
+      <a class="navbar-item{% if include.active == "projects.html" %} is-active{% endif %}" href="{% link projects.html %}">Projects</a>
+      <a class="navbar-item{% if include.active == "posts.html" or include.activeExtra == "_post" %} is-active{% endif %}" href="{% link posts.html %}">Posts</a>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" href="//github.com/doncem" target="_blank">GitHub</a>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="item">
-    <a class="ui primary button" href="//github.com/doncem" target="_blank">GitHub</a>
-  </div>
-</div>
+</nav>
