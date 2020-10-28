@@ -4509,3 +4509,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus { color: #ee2049 !imp
 .timeline.no-headers .timeline-item.is-first::before { height: calc(100% - 1.2rem); top: 1.2rem; }
 
 .timeline.no-headers .timeline-item.is-last::before { height: 1.2rem; }
+
+/* customize */
+.timeline.is-centered .timeline-item:nth-of-type(2n) .timeline-content { text-align: left; }

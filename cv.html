@@ -105,16 +105,9 @@ title: CV
     <header class="timeline-header">
       <span class="tag is-medium is-primary">Start</span>
     </header>
-    <div class="timeline-item is-primary">
-      <div class="timeline-marker is-primary"></div>
-      <div class="timeline-content">
-        <p class="heading">January 2016</p>
-        <p>Timeline content - Can include any HTML element</p>
-      </div>
-    </div>
     {% if site.data.cv.contact.size > 0 %}
-      <div class="timeline-item is-primary">
-        <div class="timeline-marker is-primary"></div>
+      <div class="timeline-item is-danger">
+        <div class="timeline-marker is-danger"></div>
         <div class="timeline-content">
           <p class="heading">{{ site.time | date_to_string }}</p>
           <div class="content">
@@ -122,52 +115,57 @@ title: CV
             {% for contact in site.data.cv.contact %}
             <p><strong>{{ contact.type }}</strong>: {{ contact.value }}</p>
             {% endfor %}
-            <span class="cd-date hidden"></span>
           </div>
         </div>
       </div>
-      {% endif %}
-      {% if site.data.cv.about.size > 0 %}
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-        </div>
-        <div class="cd-timeline-content">
+    {% endif %}
+    {% if site.data.cv.about.size > 0 %}
+    <div class="timeline-item is-info">
+      <div class="timeline-marker is-info"></div>
+      <div class="timeline-content">
+        <p class="heading">{{ site.time | date_to_string }}</p>
+        <div class="content">
           <h2>About</h2>
-          {{ site.data.cv.about | markdownify }}
-          <span class="cd-date hidden">{{ site.time | date_to_string }}</span>
+          <p>{{ site.data.cv.about | markdownify }}</p>
         </div>
       </div>
-      {% endif %}
-      {% for work in site.data.cv.work %}
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location">
-        </div>
-        <div class="cd-timeline-content">
-          <h2>Work - {{ work.place }}<span>{{ work.position }}</span></h2>
+    </div>
+    {% endif %}
+    {% for work in site.data.cv.work %}
+    <div class="timeline-item is-primary">
+      <div class="timeline-marker is-primary"></div>
+      <div class="timeline-content">
+        <p class="heading">{{ work.start }} - {{ work.end }}</p>
+        <div class="content">
+          <h2 class="title">Work - {{ work.place }}</h2>
+          <h3 class="subtitle">{{ work.position }}</h3>
           {{ work.description | markdownify }}
           <p><strong>Tags</strong>: {{ work.tags | array_to_sentence_string }}</p>
-          <span class="cd-date">{{ work.start }} - {{ work.end }}</span>
         </div>
       </div>
-      {% endfor %}
-      {% for education in site.data.cv.education %}
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location">
-        </div>
-        <div class="cd-timeline-content">
-          <h2>Education - {{ education.name }}<span>{{ education.school }} - {{ education.degree }}</span></h2>
+    </div>
+    {% endfor %}
+    {% for education in site.data.cv.education %}
+    <div class="timeline-item is-warning">
+      <div class="timeline-marker is-warning"></div>
+      <div class="timeline-content">
+        <p class="heading">{{ education.start }} - {{ education.end }}</p>
+        <div class="content">
+          <h2 class="title">Education - {{ education.name }}</h2>
+          <h3 class="subtitle">{{ education.school }} - {{ education.degree }}</h3>
           {% if education.notes.size > 0 %}
           <p><strong>Additional notes</strong>: {{ education.notes }}</p>
           {% endif %}
-          <span class="cd-date">{{ education.start }} - {{ education.end }}</span>
         </div>
       </div>
-      {% endfor %}
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-        </div>
-        <div class="cd-timeline-content">
-          <h2>Technical skills</h2>
+    </div>
+    {% endfor %}
+    <div class="timeline-item is-primary">
+      <div class="timeline-marker is-primary"></div>
+      <div class="timeline-content">
+        <p class="heading">{{ site.time | date_to_string }}</p>
+        <div class="content">
+          <h2 class="title">Technical skills</h2>
           {% if site.data.cv.skills.languages.size > 0 %}
           <p><strong>Languages</strong>: {{ site.data.cv.skills.languages | array_to_sentence_string }}</p>
           {% endif %}
@@ -180,51 +178,33 @@ title: CV
           {% if site.data.cv.skills.vcs.size > 0 %}
           <p><strong>VCS</strong>: {{ site.data.cv.skills.vcs | array_to_sentence_string }}</p>
           {% endif %}
-          <span class="cd-date hidden">{{ site.time | date_to_string }}</span>
         </div>
       </div>
-      {% for cc in site.data.cv.classes %}
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-location">
-        </div>
-        <div class="cd-timeline-content">
-          <h2>Classes and certificates - {{ cc.title }}</h2>
+    </div>
+    {% for cc in site.data.cv.classes %}
+    <div class="timeline-item is-warning">
+      <div class="timeline-marker is-warning"></div>
+      <div class="timeline-content">
+        <p class="heading">{{ cc.start }} - {{ cc.end }}</p>
+        <div class="content">
+          <h2 class="title">Classes and certificates</h2>
+          <h3 class="subtitle">{{ cc.title }}</h3>
           <p><strong>Organiser</strong>: {{ cc.organiser }}</p>
           {% if cc.notes.size > 0 %}
           <p><strong>Additional notes</strong>: {{ cc.notes }}</p>
           {% endif %}
-          <span class="cd-date">{{ cc.start }} - {{ cc.end }}</span>
         </div>
-      </div>
-      {% endfor %}
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-movie">
-        </div>
-        <div class="cd-timeline-content">
-          <h2>Hobbies</h2>
-          {{ site.data.cv.hobbies | markdownify }}
-          <span class="cd-date hidden">{{ site.time | date_to_string }}</span>
-        </div>
-      </div>
-    <div class="timeline-item is-warning">
-      <div class="timeline-marker is-warning is-image is-32x32">
-        <img src="https://bulma.io/images/placeholders/32x32.png">
-      </div>
-      <div class="timeline-content">
-        <p class="heading">February 2016</p>
-        <p>Timeline content - Can include any HTML element</p>
       </div>
     </div>
-    <header class="timeline-header">
-      <span class="tag is-primary">2017</span>
-    </header>
-    <div class="timeline-item is-danger">
-      <div class="timeline-marker is-danger is-icon">
-        <i class="fa fa-flag"></i>
-      </div>
+    {% endfor %}
+    <div class="timeline-item is-info">
+      <div class="timeline-marker is-info"></div>
       <div class="timeline-content">
-        <p class="heading">March 2017</p>
-        <p>Timeline content - Can include any HTML element</p>
+        <p class="heading">{{ site.time | date_to_string }}</p>
+        <div class="content">
+          <h2 class="title">Hobbies</h2>
+          {{ site.data.cv.hobbies | markdownify }}
+        </div>
       </div>
     </div>
     <header class="timeline-header">
@@ -232,7 +212,18 @@ title: CV
     </header>
   </div>
 </div>
-<div id="cv-tab-tags" class="tab-target is-hidden"></div>
+<div id="cv-tab-tags" class="tab-target content is-hidden">
+  <p>Although only few of features are mentioned throughout the work instances due to countless tools and abilities in use and, of course, repetition, it is nice to have some data to play around. Here is the tag cloud</p>
+  <p>Tag count transformation: each half year increments occurrence by 1. Maximum 5 years per work instance from the starting date</p>
+  <p>P.S. Bear in mind this is only from work tags. Some of technical features are applied randomly at any time as this page using jekyll, for instance</p>
+  <br/>
+  <div id="cv-tag-cloud-work" class="segment tag-cloud"></div>
+  <br/>
+  <div id="cv-tag-cloud-work-projects" class="segment tag-cloud"></div>
+  <br/>
+  <div id="cv-tag-cloud-work-projects-posts" class="segment tag-cloud"></div>
+  <br/>
+</div>
 <!--
 <div class="ui container" id="printable">
   <div class="ui one column grid">
@@ -258,13 +249,6 @@ title: CV
     </section>
   </div>
   <div class="ui tertiary bottom attached tab segment" data-tab="tags">
-    <p>Although only few of features are mentioned throughout the work instances due to countless tools and abilities in use and, of course, repetition, it is nice to have some data to play around. Here is the tag cloud</p>
-    <p>Tag count transformation: each half year increments occurrence by 1. Maximum 5 years per work instance from the starting date</p>
-    <p>P.S. Bear in mind this is only from work tags. Some of technical features are applied randomly at any time as this page using jekyll, for instance</p>
-    <div id="tag-cloud-work" class="segment tag-cloud"></div>
-    <p>Work + projects:</p>
-    <div id="tag-cloud-work-projects" class="segment tag-cloud"></div>
-    <p>Work + projects + posts:</p>
-    <div id="tag-cloud-work-projects-posts" class="segment tag-cloud"></div>
+
   </div>
 </div> -->

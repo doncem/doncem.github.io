@@ -32,20 +32,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.querySelectorAll('.tabs ul li a').forEach(el => {
-    el.addEventListener('click', () => {
-      const target = el.dataset.target;
-      const $target = document.getElementById(target);
+  let tabsWithContent = (function () {
+    let tabs = document.querySelectorAll('.tabs li');
+    let tabsContent = document.querySelectorAll('.tab-target');
 
-      document.querySelectorAll('.tabs ul li.is-active a').forEach(el => document.getElementById(el.dataset.target).classList.toggle('is-hidden'));
-      document.querySelectorAll('.tabs ul li.is-active').forEach(el => el.classList.toggle('is-active'));
+    let deactvateAllTabs = function () {
+      tabs.forEach(function (tab) {
+        tab.classList.remove('is-active');
+      });
+    };
 
-      el.parentNode.classList.toggle('is-active');
-      $target.classList.toString('is-hidden');
-    });
-  });
+    let hideTabsContent = function () {
+      tabsContent.forEach(function (tabContent) {
+        tabContent.classList.add('is-hidden');
+      });
+    };
+
+    let activateTabsContent = function (tab) {
+      tabsContent[getIndex(tab)].classList.remove('is-hidden');
+    };
+
+    let getIndex = function (el) {
+      return [...el.parentElement.children].indexOf(el);
+    };
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        deactvateAllTabs();
+        hideTabsContent();
+        tab.classList.add('is-active');
+        activateTabsContent(tab);
+      });
+    })
+
+    tabs[0].click();
+  })();
+
+  renderCvData();
 });
-{% if page.path == "cv.html" %}
+
 function renderCvData() {
   var workTags = [
     {% for work in site.data.cv.work %}
@@ -112,7 +137,7 @@ function renderCvData() {
     "Doctrine": "library",
     "Smarty": "library",
     "composer": "tool",
-    "Git": "tool",
+    "Git": "vcs",
     "Scala": "language",
     "sbt": "tool",
     "Akka": "library",
@@ -170,52 +195,25 @@ function renderCvData() {
     return w;
   };
 
-  $('.menu .item').tab({
-    onFirstLoad: function(data) {
-      if (data == "tags") {
-        anychart.onDocumentReady(function() {
-          var chart = anychart.tagCloud(words(workTags));
-          chart.title('Work tags');
-          chart.angles([0]);
-          chart.colorRange(true);
-          chart.container('tag-cloud-work');
-          chart.draw();
-          chart = anychart.tagCloud(words(workTags.concat(projectTags)));
-          chart.title('Work + Project tags');
-          chart.angles([0]);
-          chart.colorRange(true);
-          chart.container('tag-cloud-work-projects');
-          chart.draw();
-          chart = anychart.tagCloud(words(workTags.concat(projectTags).concat(postsTags)));
-          chart.title('Work + Project + Posts tags');
-          chart.angles([0]);
-          chart.colorRange(true);
-          chart.container('tag-cloud-work-projects-posts');
-          chart.draw();
-        });
-      }
-    }
+  anychart.onDocumentReady(function() {
+    var chart = anychart.tagCloud(words(workTags));
+    chart.title('Work tags');
+    chart.angles([0]);
+    chart.colorRange(true);
+    chart.container('cv-tag-cloud-work');
+    chart.draw();
+    chart = anychart.tagCloud(words(workTags.concat(projectTags)));
+    chart.title('Work + Project tags');
+    chart.angles([0]);
+    chart.colorRange(true);
+    chart.container('cv-tag-cloud-work-projects');
+    chart.draw();
+    chart = anychart.tagCloud(words(workTags.concat(projectTags).concat(postsTags)));
+    chart.title('Work + Project + Posts tags');
+    chart.angles([0]);
+    chart.colorRange(true);
+    chart.container('cv-tag-cloud-work-projects-posts');
+    chart.draw();
   });
 }
-{% endif %}
-
-var intervalSources = setInterval(function() {
-  if (window.$) {
-    loadScript('/assets/js/semantic.min.js');
-    clearInterval(intervalSources);
-  }
-}, 100);
-var intervalUI = setInterval(function() {
-  if (window.$ && $().accordion) {
-    $('.ui.accordion').accordion();
-  }
-}, 100);
-{% if page.path == "cv.html" %}
-var intervalData = setInterval(function() {
-  if (window.$ && $().tab) {
-    renderCvData();
-    clearInterval(intervalData);
-  }
-}, 100);
-{% endif %}
 </script>
