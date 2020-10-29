@@ -4512,3 +4512,5 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus { color: #ee2049 !imp
 
 /* customize */
 .timeline.is-centered .timeline-item:nth-of-type(2n) .timeline-content { text-align: left; }
+
+.content figure.highlight { text-align: left; }
