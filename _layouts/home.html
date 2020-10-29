@@ -21,8 +21,7 @@
     <!-- Google Analytics end -->
     {% assign startsWith = page.path | slice: 0, 5 %}
     {% include header.html %}
-    {% if page.path == "cv.html" %}
-    <link rel="stylesheet" href="/assets/css/vertical-timeline.css" />
+    <!-- {% if page.path == "cv.html" %}
     <style type="text/css">
       @media print {
         body * { visibility: hidden; }
@@ -30,11 +29,7 @@
         #printable .active.tab { position: absolute; left: 0; top: 0; }
       }
     </style>
-    {% endif %}
-    <link rel="stylesheet" href="/assets/css/adjustments.css" />
-    {% if startsWith == "_post" or ampStartsWith == "/post/" %}
-    <link rel="stylesheet" href="/assets/css/atom-one-dark-pygment.css" />
-    {% endif %}
+    {% endif %} -->
     {% seo %}
   </head>
 <body class="is-fullwidth has-background-dark">
