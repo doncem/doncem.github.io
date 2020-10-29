@@ -3,39 +3,36 @@ layout: home
 permalink: /projects
 title: Projects
 ---
-<div class="ui tertiary inverted very padded container segment">
-  <div class="ui message">
-    <p>Websites are not my favourite activity because then I have to deal with a client and, usually, they are really hard to communicate with. Especially when knowledge about business, production, even minor technical questions are UFOs. Any download button will <strong>NOT</strong> have source code</p>
-  </div>
-  <div class="ui relaxed divided items">
-    {% assign sorted = site.projects | sort: "order" | reverse %}
-    {% for project in sorted %}
-    <div class="item">
-      <div class="middle aligned content">
-        <div class="header">{{ project.title }}</div>
-        <div class="meta">{{ project.tags | array_to_sentence_string }}</div>
-        <div class="description">{{ project.content }}</div>
-        <div class="extra">
-          {% if project.published.size > 0 %}
-          <p class="ui left floated"><strong>Published</strong>: {{ project.published }}</p>
-          {% endif %}
-          {% if project.worked.size > 0 %}
-          <p class="ui left floated"><strong>Worked on</strong>: {{ project.worked }}</p>
-          {% endif %}
-          <div class="ui right floated">
-            {% if project.link.size > 0 %}
-            <a class="ui primary button" href="{{ project.link }}" target="_blank">Link</a>
-            {% endif %}
-            {% if project.zip.size > 0 %}
-            <a class="ui primary button" href="{{ project.zip }}" target="_blank">Link to .zip</a>
-            {% endif %}
-            {% if project.js-exec.size > 0 %}
-            <button class="ui primary button" onclick="{{ project.js-exec }}()">Go!</button>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
+
+<div class="notification is-info is-light">
+  <p>Websites are not my favourite activity because then I have to deal with a client and, usually, they are really hard to communicate with. Especially when knowledge about business, production, even minor technical questions are UFOs. Any download button will <strong>NOT</strong> have source code</p>
 </div>
+{% assign sorted = site.projects | sort: "order" | reverse %}
+{% for project in sorted %}
+<div class="card">
+  <div class="card-content">
+    <p class="title">{{ project.title }}</p>
+    <p class="subtitle is-6"><strong>Tags</strong>: {{ project.tags | array_to_sentence_string }}</p>
+    <div class="content">
+      {{ project.content }}
+      {% if project.published.size > 0 %}
+      <strong>Published</strong>: <time datetime="{{ project.published }}">{{ project.published }}</time>
+      {% endif %}
+      {% if project.worked.size > 0 %}
+      <strong>Worked on</strong>: <time datetime="{{ project.worked }}">{{ project.worked }}</time>
+      {% endif %}
+    </div>
+  </div>
+  <footer class="card-footer">
+    {% if project.link.size > 0 %}
+    <a class="card-footer-item" href="{{ project.link }}" target="_blank">Link</a>
+    {% endif %}
+    {% if project.zip.size > 0 %}
+    <a class="card-footer-item" href="{{ project.zip }}" target="_blank">Link to .zip</a>
+    {% endif %}
+    {% if project.js-exec.size > 0 %}
+    <button class="card-footer-item" onclick="{{ project.js-exec }}()">Go!</button>
+    {% endif %}
+  </footer>
+</div>
+{% endfor %}
