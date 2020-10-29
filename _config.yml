@@ -30,11 +30,13 @@ collections:
     output: true
     permalink: /post/:year/:month/:day/:slug
   projects:
+
 #assets:
 #  prefix: "/assets"
 #  sources:
 #    - _assets
 #    - semantic/dist
+
 exclude:
   - Gemfile
   - Gemfile.lock

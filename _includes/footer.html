@@ -1,15 +1,77 @@
-<div class="ui one column stackable grid">
-  <div class="column">
-    <div class="ui inverted right floated segment">Compiled {{ site.time | date_to_long_string }}</div>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>Compiled {{ site.time | date_to_long_string }}</p>
   </div>
-</div>
+</footer>
 
 <script src="//cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
 <script src="//cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
 
 {% if page.path == "projects.html" %}<script type="text/javascript" src="/assets/js/game-of-life.js"></script>{% endif %}
 <script type="text/javascript">
-{% if page.path == "cv.html" %}
+document.addEventListener('DOMContentLoaded', () => {
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+  {% if page.path == "cv.html" %}
+  let tabsWithContent = (function () {
+    let tabs = document.querySelectorAll('.tabs li');
+    let tabsContent = document.querySelectorAll('.tab-target');
+
+    let deactvateAllTabs = function () {
+      tabs.forEach(function (tab) {
+        tab.classList.remove('is-active');
+      });
+    };
+
+    let hideTabsContent = function () {
+      tabsContent.forEach(function (tabContent) {
+        tabContent.classList.add('is-hidden');
+      });
+    };
+
+    let activateTabsContent = function (tab) {
+      tabsContent[getIndex(tab)].classList.remove('is-hidden');
+    };
+
+    let getIndex = function (el) {
+      return [...el.parentElement.children].indexOf(el);
+    };
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        deactvateAllTabs();
+        hideTabsContent();
+        tab.classList.add('is-active');
+        activateTabsContent(tab);
+      });
+    })
+
+    tabs[0].click();
+  })();
+
+  renderCvData();
+  {% endif %}
+});
+
 function renderCvData() {
   var workTags = [
     {% for work in site.data.cv.work %}
@@ -76,7 +138,7 @@ function renderCvData() {
     "Doctrine": "library",
     "Smarty": "library",
     "composer": "tool",
-    "Git": "tool",
+    "Git": "vcs",
     "Scala": "language",
     "sbt": "tool",
     "Akka": "library",
@@ -104,6 +166,7 @@ function renderCvData() {
     "linux": "OS",
     "hobby": "personal",
     "music": "personal",
+    "Bulma": "tool",
     // projects
     "wordpress": "tool",
     "markdown": "language",
@@ -134,52 +197,25 @@ function renderCvData() {
     return w;
   };
 
-  $('.menu .item').tab({
-    onFirstLoad: function(data) {
-      if (data == "tags") {
-        anychart.onDocumentReady(function() {
-          var chart = anychart.tagCloud(words(workTags));
-          chart.title('Work tags');
-          chart.angles([0]);
-          chart.colorRange(true);
-          chart.container('tag-cloud-work');
-          chart.draw();
-          chart = anychart.tagCloud(words(workTags.concat(projectTags)));
-          chart.title('Work + Project tags');
-          chart.angles([0]);
-          chart.colorRange(true);
-          chart.container('tag-cloud-work-projects');
-          chart.draw();
-          chart = anychart.tagCloud(words(workTags.concat(projectTags).concat(postsTags)));
-          chart.title('Work + Project + Posts tags');
-          chart.angles([0]);
-          chart.colorRange(true);
-          chart.container('tag-cloud-work-projects-posts');
-          chart.draw();
-        });
-      }
-    }
+  anychart.onDocumentReady(function() {
+    var chart = anychart.tagCloud(words(workTags));
+    chart.title('Work tags');
+    chart.angles([0]);
+    chart.colorRange(true);
+    chart.container('cv-tag-cloud-work');
+    chart.draw();
+    chart = anychart.tagCloud(words(workTags.concat(projectTags)));
+    chart.title('Work + Project tags');
+    chart.angles([0]);
+    chart.colorRange(true);
+    chart.container('cv-tag-cloud-work-projects');
+    chart.draw();
+    chart = anychart.tagCloud(words(workTags.concat(projectTags).concat(postsTags)));
+    chart.title('Work + Project + Posts tags');
+    chart.angles([0]);
+    chart.colorRange(true);
+    chart.container('cv-tag-cloud-work-projects-posts');
+    chart.draw();
   });
 }
-{% endif %}
-
-var intervalSources = setInterval(function() {
-  if (window.$) {
-    loadScript('/assets/js/semantic.min.js');
-    clearInterval(intervalSources);
-  }
-}, 100);
-var intervalUI = setInterval(function() {
-  if (window.$ && $().accordion) {
-    $('.ui.accordion').accordion();
-  }
-}, 100);
-{% if page.path == "cv.html" %}
-var intervalData = setInterval(function() {
-  if (window.$ && $().tab) {
-    renderCvData();
-    clearInterval(intervalData);
-  }
-}, 100);
-{% endif %}
 </script>

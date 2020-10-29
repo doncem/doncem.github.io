@@ -20,10 +20,8 @@
     </script>
     <!-- Google Analytics end -->
     {% assign startsWith = page.path | slice: 0, 5 %}
-    {% assign ampStartsWith = page.path | slice: 3, 6 %}
     {% include header.html %}
-    {% if page.path == "cv.html" %}
-    <link rel="stylesheet" href="/assets/css/vertical-timeline.css" />
+    <!-- {% if page.path == "cv.html" %}
     <style type="text/css">
       @media print {
         body * { visibility: hidden; }
@@ -31,33 +29,23 @@
         #printable .active.tab { position: absolute; left: 0; top: 0; }
       }
     </style>
-    {% endif %}
-    <link rel="stylesheet" href="/assets/css/adjustments.css" />
-    {% if startsWith == "_post" or ampStartsWith == "/post/" %}
-    <link rel="stylesheet" href="/assets/css/atom-one-dark-pygment.css" />
-    {% endif %}
-    {% if page.path contains '_posts' %}
-      <link rel="amphtml" href="{{ page.id | prepend: '/amp' | prepend: site.baseurl | prepend: site.url }}">
-    {% else %}
-      <link rel="amphtml" href="/amp/{{ page.url | replace_first:'/','' }}" />
-    {% endif %}
+    {% endif %} -->
     {% seo %}
   </head>
-<body>
-  <div class="ui inverted vertical segment">
-    {% include menu.html active=page.path activeExtra=startsWith isAmp="0" %}
-
-    {% comment %}A single post does need a wrapper{% endcomment %}
-    {% if startsWith == "_post" or ampStartsWith == "/post/" %}
-    <div class="ui tertiary very padded container segment">
-    {{ content }}
+<body class="is-fullwidth has-background-dark">
+  <section class="container">
+    {% include menu.html active=page.path activeExtra=startsWith %}
+    <div class="box">
+      {% comment %}A single post does need a wrapper{% endcomment %}
+      {% if startsWith == "_post" or ampStartsWith == "/post/" %}
+      <div class="content">
+      {{ content }}
+      </div>
+      {% else %}
+      {{ content }}
+      {% endif %}
     </div>
-    {% else %}
-    {{ content }}
-    {% endif %}
-
     {% include footer.html %}
-
-  </div>
+</section>
 </body>
 </html>

@@ -4,22 +4,16 @@ permalink: /posts
 title: Posts
 ---
 
-<div class="ui tertiary inverted very padded container segment">
-  <div class="ui relaxed divided items">
-    {% for post in site.posts %}
-    <div class="item">
-      <div class="middle aligned content">
-        <div class="header">{{ post.title }}</div>
-        <div class="meta">{{ post.tags | array_to_sentence_string }}</div>
-        <div class="description">{{ post.excerpt | strip_html }}</div>
-        <div class="extra">
-          <div class="ui left floated">
-            {% for source in post.sources %}<a class="ui primary button" href="{{ source }}" target="_blank">Source</a>{% endfor %}
-            <a class="ui primary button" href="{{ post.url }}">Read more</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
+{% for post in site.posts %}
+<div class="card">
+  <div class="card-content">
+    <p class="title">{{ post.title }}</p>
+    <p class="subtitle is-6"><strong>Tags</strong>: {{ post.tags | array_to_sentence_string }}</p>
+    <div class="content">{{ post.excerpt | strip_html }}</div>
   </div>
+  <footer class="card-footer">
+    <a class="card-footer-item" href="{{ post.url }}">Read more</a>
+    {% for source in post.sources %}<a class="card-footer-item" href="{{ source }}" target="_blank">Source</a>{% endfor %}
+  </footer>
 </div>
+{% endfor %}

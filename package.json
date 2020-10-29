@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "description": "Personal page",
   "main": "_site/index.html",
-  "dependencies": {},
+  "dependencies": {
+    "bulma-timeline": "^3.0.4"
+  },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "semantic-ui": "Semantic-Org/Semantic-UI.git#gulp-4"
+    "bulma": "^0.9.1",
+    "node-sass": "^4.14.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-sass": "node-sass --output-style compact _sass/main.sass assets/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch-sass": "npm run build-sass -- --watch"
   },
   "repository": {
     "type": "git",
