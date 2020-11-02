@@ -24,7 +24,7 @@ The re-work was bound to happen.
 As a normal back-end developer with some knowledge on other things too - I googled.
 Something amond those lines like _css frameworks_ etc.
 Bulma was there too.
-But my I caught SemanticUI.
+But my eye caught SemanticUI.
 Thought _well that's different compared to any other web for sure_.
 Which was my goal and it worked out well.
 
