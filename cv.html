@@ -18,90 +18,104 @@ title: CV
 <div id="cv-tab-cards" class="tab-target">
   <div class="columns is-flex-wrap-wrap">
     {% if site.data.cv.contact.size > 0 %}
-    <article class="column is-half box">
-      <p class="title">Contact</p>
-      <div class="content">
-        {% for contact in site.data.cv.contact %}
-        <p><strong>{{ contact.type }}</strong>: {{ contact.value }}</p>
-        {% endfor %}
-      </div>
-    </article>
+    <div class="column is-half">
+      <article class="box">
+        <p class="title">Contact</p>
+        <div class="content">
+          {% for contact in site.data.cv.contact %}
+          <p><strong>{{ contact.type }}</strong>: {{ contact.value }}</p>
+          {% endfor %}
+        </div>
+      </article>
+    </div>
     {% endif %}
     {% if site.data.cv.about.size > 0 %}
-    <article class="column is-half box">
-      <p class="title">About</p>
-      <div class="content">
-        {{ site.data.cv.about | markdownify }}
-      </div>
-    </article>
+    <div class="column is-half">
+      <article class="box">
+        <p class="title">About</p>
+        <div class="content">
+          {{ site.data.cv.about | markdownify }}
+        </div>
+      </article>
+    </div>
     {% endif %}
     {% for work in site.data.cv.work %}
-    <article class="column is-half box">
-      <p class="title">Work - {{ work.place }}</p>
-      <p class="subtitle">
-        <span>{{ work.position }}</span>
-        <span>{{ work.start }} - {{ work.end }}</span>
-      </p>
-      <div class="content">
-        {{ work.description | markdownify }}
-      </div>
-      <div class="extra content">
-        {{ work.tags | array_to_sentence_string }}
-      </div>
-    </article>
+    <div class="column is-half">
+      <article class="box">
+        <p class="title">Work - {{ work.place }}</p>
+        <p class="subtitle">
+          <span>{{ work.position }}</span>
+          <span>{{ work.start }} - {{ work.end }}</span>
+        </p>
+        <div class="content">
+          {{ work.description | markdownify }}
+        </div>
+        <div class="extra content">
+          {{ work.tags | array_to_sentence_string }}
+        </div>
+      </article>
+    </div>
     {% endfor %}
     {% for education in site.data.cv.education %}
-    <article class="column is-half box">
-      <p class="title">Education - {{ education.name }}</p>
-      <p class="subtitle">
-        <span>{{ education.school }}</span>
-        <span>{{ education.degree }}</span>
-        <span>{{ education.start }} - {{ education.end }}</span>
-      </p>
-      <div class="content">
-        {% if education.notes.size > 0 %}
-        <p><strong>Additional notes</strong>: {{ education.notes }}</p>
-        {% endif %}
-      </div>
-    </article>
+    <div class="column is-half">
+      <article class="box">
+        <p class="title">Education - {{ education.name }}</p>
+        <p class="subtitle">
+          <span>{{ education.school }}</span>
+          <span>{{ education.degree }}</span>
+          <span>{{ education.start }} - {{ education.end }}</span>
+        </p>
+        <div class="content">
+          {% if education.notes.size > 0 %}
+          <p><strong>Additional notes</strong>: {{ education.notes }}</p>
+          {% endif %}
+        </div>
+      </article>
+    </div>
     {% endfor %}
-    <article class="column is-half box">
-      <p class="title">Technical skills</p>
-      <div class="content">
-        {% if site.data.cv.skills.languages.size > 0 %}
-        <p><strong>Languages</strong>: {{ site.data.cv.skills.languages | array_to_sentence_string }}</p>
-        {% endif %}
-        {% if site.data.cv.skills.libraries.size > 0 %}
-        <p><strong>Libraries</strong>: {{ site.data.cv.skills.libraries | array_to_sentence_string }}</p>
-        {% endif %}
-        {% if site.data.cv.skills.tools.size > 0 %}
-        <p><strong>Tools/Utils</strong>: {{ site.data.cv.skills.tools | array_to_sentence_string }}</p>
-        {% endif %}
-        {% if site.data.cv.skills.vcs.size > 0 %}
-        <p><strong>VCS</strong>: {{ site.data.cv.skills.vcs | array_to_sentence_string }}</p>
-        {% endif %}
-      </div>
-    </article>
+    <div class="column is-half">
+      <article class="box">
+        <p class="title">Technical skills</p>
+        <div class="content">
+          {% if site.data.cv.skills.languages.size > 0 %}
+          <p><strong>Languages</strong>: {{ site.data.cv.skills.languages | array_to_sentence_string }}</p>
+          {% endif %}
+          {% if site.data.cv.skills.libraries.size > 0 %}
+          <p><strong>Libraries</strong>: {{ site.data.cv.skills.libraries | array_to_sentence_string }}</p>
+          {% endif %}
+          {% if site.data.cv.skills.tools.size > 0 %}
+          <p><strong>Tools/Utils</strong>: {{ site.data.cv.skills.tools | array_to_sentence_string }}</p>
+          {% endif %}
+          {% if site.data.cv.skills.vcs.size > 0 %}
+          <p><strong>VCS</strong>: {{ site.data.cv.skills.vcs | array_to_sentence_string }}</p>
+          {% endif %}
+        </div>
+      </article>
+    </div>
     {% for cc in site.data.cv.classes %}
-    <article class="column is-half box">
-      <p class="title">Classes and certificates - {{ cc.title }}</p>
-      <p class="meta">
-        <span>{{ cc.start }} - {{ cc.end }}</span>
-      </p>
-      <div class="content">
-        <p><strong>Organiser</strong>: {{ cc.organiser }}</p>
-        {% if cc.notes.size > 0 %}
-        <p><strong>Additional notes</strong>: {{ cc.notes }}</p>
-        {% endif %}
-      </div>
-    </article>
+    <div class="column is-half">
+      <article class="box">
+        <p class="title">Classes and certificates - {{ cc.title }}</p>
+        <p class="meta">
+          <span>{{ cc.start }} - {{ cc.end }}</span>
+        </p>
+        <div class="content">
+          <p><strong>Organiser</strong>: {{ cc.organiser }}</p>
+          {% if cc.notes.size > 0 %}
+          <p><strong>Additional notes</strong>: {{ cc.notes }}</p>
+          {% endif %}
+        </div>
+      </article>
+    </div>
     {% endfor %}
-    <article class="column is-half box">
-      <p class="title">Hobbies</p>
-      <div class="content">
-        {{ site.data.cv.hobbies | markdownify }}
-      </div>
-    </article>
+    <div class="column is-half">
+      <article class="box">
+        <p class="title">Hobbies</p>
+        <div class="content">
+          {{ site.data.cv.hobbies | markdownify }}
+        </div>
+      </article>
+    </div>
   </div>
 </div>
 <div id="cv-tab-timeline" class="tab-target is-hidden">
