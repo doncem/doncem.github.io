@@ -4517,3 +4517,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus { color: #ee2049 !imp
 .timeline.is-centered .timeline-item:nth-of-type(2n) .timeline-content { text-align: left; }
 
 .content figure.highlight { text-align: left; }
+
+/* printable tab */
+@media print { body * { visibility: hidden; }
+  .printable:not(.is-hidden), .printable:not(.is-hidden) * { visibility: visible; border: none; }
+  .printable:not(.is-hidden) { position: absolute; left: 0; top: 0; } }
