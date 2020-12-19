@@ -11,7 +11,7 @@ about: |
 
   Roles and specific experience outlined below, for more information please refer to my LinkedIn profile or send me an email.
 work:
-  - place: TBD
+  - place: Bankera
     position: Senior Software developer
     start: 09-2020
     end: now
@@ -23,6 +23,7 @@ work:
       - Git
       - API
       - micro-service
+      - Docker
       - maven
       - kafka
   - place: HMCTS
