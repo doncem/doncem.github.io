@@ -4518,6 +4518,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus { color: #ee2049 !imp
 
 .content figure.highlight { text-align: left; }
 
+#window-grid-container { position: fixed; top: 0; left: 0; }
+
+#window-grid-container .grid-element { border-radius: 5px; border: thin solid black; opacity: 0.7; position: absolute; }
+
 /* printable tab */
 @media print { body * { visibility: hidden; }
   .printable:not(.is-hidden), .printable:not(.is-hidden) * { visibility: visible; border: none; }
