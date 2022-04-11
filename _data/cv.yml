@@ -11,10 +11,17 @@ about: |
 
   Roles and specific experience outlined below, for more information please refer to my LinkedIn profile or send me an email.
 work:
+  - place: Codigi
+    position: Senior Software Developer
+    start: 04-2022
+    end: now
+    description: TBD
+    tags:
+      -
   - place: Bankera
     position: Senior Software developer / Tech Lead
     start: 09-2020
-    end: now
+    end: 04-2022
     description: |
       Hands on wheels which drive the online banking in a most mobile, easy accessible form we can achieve in current trends.
 
