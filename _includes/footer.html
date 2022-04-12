@@ -90,7 +90,7 @@ function renderCvData() {
       {% if work.end == "now" %}
         {% assign period = year_end | minus: year_start | times: 12 | plus: month_end | minus: month_start | plus: 0.0 | divided_by: 6 | ceil %}
       {% else %}
-        {% assign period = year_end | minus: year_start | at_most: 5 | times: 12 | plus: month_end | minus: month_start | plus: 0.0 | divided_by: 6 | ceil %}
+        {% assign period = year_end | minus: year_start | at_most: 1 | times: 12 | plus: month_end | minus: month_start | plus: 0.0 | divided_by: 6 | ceil %}
       {% endif %}
       {% assign amended_period = %}
       {% for tag in work.tags %}

@@ -32,6 +32,7 @@ work:
       - Git
       - API
       - micro-service
+      - SQL
       - Docker
       - maven
       - kafka
@@ -66,6 +67,7 @@ work:
       - micro-service
       - gradle
       - terraform
+      - Docker
   - place: OnTrackRetail ltd.
     position: Senior Software developer
     start: 11-2014
@@ -198,6 +200,7 @@ skills:
     - Backbone
   tools:
     - gradle
+    - maven
     - sbt
     - terraform
     - ansible
