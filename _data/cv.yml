@@ -15,9 +15,40 @@ work:
     position: Senior Software Developer
     start: 04-2022
     end: now
-    description: TBD
+    description: |
+      Provided consultation and development services externally for companies:
+
+      - SME Finance (alongside with Inventi)
+      - Intrum (alongside with Baltic Amadeus)
+
+      #### SME Finance
+
+      Building a semi-automatic business tool consisting of various microservices together communicating via internal API calls or zeebe workflows.
+      Major topics involved during the consultation/development:
+
+      - Introduction of integration tests as a separate source set (not mixed up with unit tests)
+      - Built parsing system of third party XMLs consisting of various information about object's financial data and whatnot
+      - Joined various financial indicators into one scope for so called application
+      - Maintained and created existing/new zeebe workflows/decision engines
+      - Started making changes in react application (personal achievement - breakthrough from back-end services)
+
+      #### Intrum
+
+      TBD
+
+      #### Codigi itself
+
+      In parallel during free time working on side-project invented by Codigi colleagues.
     tags:
-      -
+      - Java
+      - Spring Boot
+      - gradle
+      - Git
+      - API
+      - micro-service
+      - Docker
+      - zeebe
+      - React
   - place: Bankera
     position: Senior Software developer / Tech Lead
     start: 09-2020
@@ -194,10 +225,12 @@ skills:
     - jQuery
     - Twig
     - Doctrine
+    - zeebe
     - Smarty
     - Twitter Bootstrap
     - Semantic UI
     - Backbone
+    - React
   tools:
     - gradle
     - maven
