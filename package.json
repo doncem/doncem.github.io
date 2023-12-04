@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "bulma": "^0.9.3",
-    "node-sass": "^7.0.0"
+    "node-sass": "^9.0.0"
   },
   "scripts": {
     "build-sass": "node-sass --output-style compact _sass/main.sass assets/css/main.css",
