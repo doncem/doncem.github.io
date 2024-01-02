@@ -9,7 +9,7 @@ ruby RUBY_VERSION
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.9.0"
+gem "jekyll", "3.9.3"
 
 gem "kramdown-parser-gfm"
 
@@ -27,3 +27,5 @@ group :jekyll_plugins do
    gem "jekyll-seo-tag", "2.8.0"
    gem "jekyll-sitemap", "1.4.0"
 end
+
+gem "webrick", "~> 1.8"
