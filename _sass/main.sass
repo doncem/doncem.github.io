@@ -1,0 +1,31 @@
+@import "../node_modules/bulma/bulma.sass"
+/* extensions */
+@import "../node_modules/bulma-timeline/src/sass/index.sass"
+/* tag cloud */
+.tag-cloud
+  height: 400px;
+/* customize */
+.timeline.is-centered .timeline-item:nth-of-type(2n) .timeline-content
+  text-align: left
+.content figure.highlight
+  text-align: left
+#window-grid-container
+  position: fixed
+  top: 0
+  left: 0
+  .grid-element
+    border-radius: 5px
+    border: thin solid bulmaDarken(#737373, 50%)
+    opacity: 0.7
+    position: absolute
+/* printable tab */
+@media print
+  body *
+    visibility: hidden
+  .printable:not(.is-hidden), .printable:not(.is-hidden) *
+    visibility: visible
+    border: none
+  .printable:not(.is-hidden)
+    position: absolute
+    left: 0
+    top: 0
