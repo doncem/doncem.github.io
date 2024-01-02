@@ -7,7 +7,7 @@
     "bulma-timeline": "^3.0.4"
   },
   "devDependencies": {
-    "bulma": "^0.9.3",
+    "bulma": "^0.9.4",
     "node-sass": "^9.0.0"
   },
   "scripts": {
