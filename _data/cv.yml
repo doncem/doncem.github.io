@@ -34,7 +34,7 @@ work:
 
       #### Intrum
 
-      TBD
+      Integrating separate components dealing with logical concepts of Intrum business notions
 
       #### Codigi itself
 
@@ -43,12 +43,14 @@ work:
       - Java
       - Spring Boot
       - gradle
+      - maven
       - Git
       - API
       - micro-service
       - Docker
       - zeebe
       - React
+      - kafka
   - place: Bankera
     position: Senior Software developer / Tech Lead
     start: 09-2020
