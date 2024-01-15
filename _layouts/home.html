@@ -28,7 +28,7 @@
     {% include menu.html active=page.path activeExtra=startsWith %}
     <div class="box">
       {% comment %}A single post does need a wrapper{% endcomment %}
-      {% if startsWith == "_post" or ampStartsWith == "/post/" %}
+      {% if startsWith == "_post" %}
       <div class="content">
       {{ content }}
       </div>
