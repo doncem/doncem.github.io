@@ -11,10 +11,22 @@ about: |
 
   Roles and specific experience outlined below, for more information please refer to my LinkedIn profile or send me an email.
 work:
+  - place: Swedbank
+    position: Senior Software Developer
+    start: 02-2024
+    end: now
+    description: |
+      TBD
+    tags:
+      - Java
+      - Spring Boot
+      - gradle
+      - Git
+      - API
   - place: Codigi
     position: Senior Software Developer
     start: 04-2022
-    end: now
+    end: 02-2024
     description: |
       Provided consultation and development services externally for companies:
 
